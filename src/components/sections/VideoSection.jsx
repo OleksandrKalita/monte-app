@@ -19,7 +19,6 @@ function VideoSection () {
     
               if (currentVisibility >= 1) {
                 setPosition('on');
-                console.log('on')
               } else if (currentVisibility < 1 && currentVisibility > 0) {
                 const rect = entry.boundingClientRect;
                 if (rect.top > 0) {
@@ -28,7 +27,7 @@ function VideoSection () {
                   setPosition('after');
                 }
               } else {
-                setPosition('after'); 
+                setPosition('befor'); 
               }
             });
           },
@@ -102,7 +101,7 @@ function VideoSection () {
             height: '520px'
         }
     }
-    if (position === 'after' || position === 'on' && visibility <= 0.6) {
+    if (position === 'after' && visibility <= 0.6) {
         dynamicStyles = {
             width: '100vw',
             height:'100vh',
