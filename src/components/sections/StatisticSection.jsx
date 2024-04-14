@@ -87,24 +87,30 @@ function StatisticSection() {
                             <Box position="absolute" left="0" bottom="0" p="20px">
                                 <SepecialAnimationComponents 
                                         delay={0.8}
-                                        animationFrom={{ y: '-200%', autoAlpha: 0, scale: 0.5 }}
+                                        animationFrom={{ y: '200%', autoAlpha: 0, scale: 0.5 }}
                                         animationTo={{y: 0, autoAlpha: 1, scale: 1, duration: 1.5, ease: 'power3.out'}}
                                         Component={() => (
                                         <Text fontSize='18px' fontWeight='800' color='#fff'>Building your dreams</Text>
                                 )}/>
                             </Box>
-                            <Box position="absolute" right="0" bottom="0" p="20px">
-                                <Box w='304px' h='96px' bgColor='#fff' borderRadius='20px' p='20px' display='flex' columnGap='20px' alignItems='center'>
-                                    <Box position='relative' boxSize='60px'>
-                                        <Image src="avatar-1-icon.svg"/>
-                                        <Box boxSize='15px' position='absolute' top={0} right={0} borderRadius='50%' bgColor='#fff' border='4px solid #000'></Box>
-                                    </Box>
-                                    <Box display='flex' flexDirection='column' justifyContent='space-between'>
-                                    <AnimationText style={{fontSize: '12px', color: 'rgba(25,25,25,0.5)'}} lines={['Special Offer']}/>
-                                    <AnimationText style={{fontSize: '16px', color: '#000', fontWeight: '500'}} lines={['Get The Consultation', 'With Our Expert']}/>
-                                    </Box>
-                                </Box>
-                            </Box>
+                            <SepecialAnimationComponents 
+                                        delay={0.8}
+                                        animationFrom={{ y: '200%', autoAlpha: 0, scale: 0.5 }}
+                                        animationTo={{y: 0, autoAlpha: 1, scale: 1, duration: 1.5, ease: 'power3.out'}}
+                                        Component={() => (
+                                        <Box position="absolute" right="0" bottom="0" p="20px">
+                                            <Box w='304px' h='96px' bgColor='#fff' borderRadius='20px' p='20px' display='flex' columnGap='20px' alignItems='center'>
+                                                <Box position='relative' boxSize='60px'>
+                                                    <Image src="avatar-1-icon.svg"/>
+                                                    <Box boxSize='15px' position='absolute' top={0} right={0} borderRadius='50%' bgColor='#fff' border='4px solid #000'></Box>
+                                                </Box>
+                                                <Box display='flex' flexDirection='column' justifyContent='space-between'>
+                                                <AnimationText style={{fontSize: '12px', color: 'rgba(25,25,25,0.5)'}} lines={['Special Offer']}/>
+                                                <AnimationText style={{fontSize: '16px', color: '#000', fontWeight: '500'}} lines={['Get The Consultation', 'With Our Expert']}/>
+                                                </Box>
+                                            </Box>
+                                        </Box>
+                            )}/>
                         </Box>
                     </Grid>
                 </Box>
