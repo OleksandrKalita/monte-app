@@ -38,7 +38,7 @@ export function AnimationText({ lines, style, delay = 0.3 }) {
     <Box ref={ref}>
       {lines.map((line, index) => (
         <Box overflow="hidden" key={index}>
-          <Box className="text-line" style={style} fontFamily="Roboto">{line}</Box>
+          <Box className="text-line" fontFamily='`Montserrat' style={style} >{line}</Box>
         </Box>
       ))}
     </Box>

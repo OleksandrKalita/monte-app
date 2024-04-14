@@ -1,22 +1,27 @@
-import { Roboto } from "next/font/google";
-import { Box } from "@chakra-ui/react";
+import { Box, ChakraProvider, extendTheme } from "@chakra-ui/react";
 import HomeSection from "@/components/sections/HomeSection";
-// import { Screens } from "@/components/sections/Screens";
 import VideoSection from "@/components/sections/VideoSection";
-import VideoComponent from "@/components/sections/VideoSection";
 import PortfolioSection from "@/components/sections/PortfolioSection";
-
-const roboto = Roboto({ subsets: ["latin"], weight: ['400'] });
-
+import Head from "next/head";
+import StatisticSection from "@/components/sections/StatisticSection";
+import SolutionsSection from "@/components/sections/SolutionsSection";
 
 const Home = () => {
-
     return (
-    <Box w='100vw' minH='100vh' display='flex' flexDirection='column' bgColor='#F8F5F2'>
-        <HomeSection/>
-        <VideoSection/>
-        <PortfolioSection/>
-    </Box>);
+    <ChakraProvider>
+        <Head>
+            <link rel="preconnect" href="https://fonts.googleapis.com"/>
+            <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+            <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet"/>
+        </Head>
+        <Box fontFamily='montserrat' w='100vw' minH='100vh' display='flex'  flexDirection='column' bgColor='#F8F5F2'>
+            <HomeSection/>
+            <VideoSection/>
+            <PortfolioSection/>
+            <StatisticSection/>
+            <SolutionsSection/>
+        </Box>
+    </ChakraProvider>);
 }
 
 export default Home

@@ -1,5 +1,4 @@
 import React, { useRef, useState, useEffect } from 'react';
-import { useSpring, animated } from '@react-spring/web';
 import { useInView } from 'react-intersection-observer';
 import { Box, Text} from '@chakra-ui/react';
 import Marquee from "react-fast-marquee";
@@ -87,7 +86,6 @@ function VideoSection () {
             width: '100vw',
             height:'100vh',
             borderRadius: '0px',
-            // padding: '0px 20px 40px 20px'
         }
     }
     if (position === 'after' || position === 'on' && visibility <= 0.6) {
@@ -121,7 +119,7 @@ function VideoSection () {
     <div ref={videoRef} style={{height: '809px', width: '100%', position: 'relative', overflow: 'hidden', display: 'flex', alignItems: 'center', justifyContent: 'center', backgroundColor: '#F8F5F2', transition: 'all 1.2s ease', ...wrapperStyles}}>
     {/* <Text  position='absolute' top='30%' fontSize='56px' zIndex={4} flexWrap='nowrap' color='#FFF' textAlign={'center'}></Text> */}
     <Marquee style={{position: 'absolute', zIndex: 2}} speed={120}>
-        <Text fontSize='56px' color='#FFF'>Apartments with an initial payment from $25,000</Text>
+        <Text fontSize='56px' color='#FFF' fontWeight='700'>Apartments with an initial payment from $25,000</Text>
     </Marquee>
       <Box position='relative' w='790px'h='446px' overflow='hidden' borderRadius='30px' fill='cover' style={{...dynamicStyles, transition: 'all 0.8s ease'}}>
         <video
