@@ -1,6 +1,5 @@
 import AnimationText from "@/hooks/AnimationText";
-import RenderCircle from "@/hooks/RenderCircle";
-import { Box, Flex, Image, Text, HStack, VStack, Center, useBreakpointValue, Circle, useMediaQuery} from "@chakra-ui/react"
+import { Box, Image, Text, HStack, VStack, Circle, useMediaQuery} from "@chakra-ui/react"
 import Marquee from "react-fast-marquee";
 
 function SolutionsSection() {
@@ -117,7 +116,7 @@ function SolutionsSection() {
 
             <Box maxW='1400px' px='20px' py='30px' mx='auto'>
 
-                <Box w='100%' display='flex' flexDirection='column' rowGap='80px' alignItems='center' >
+                <Box w='100%' display='flex' flexDirection='column' rowGap='80px' alignItems='center' pb='50px'>
                     <AnimationText style={{color: '#fff', fontSize: '56px' }} lines={['Path to Smart Ownership']}/>
                     
                     <Box position="relative" h={isSmallScreen ? '850px' : 'full'} w={isSmallScreen ? '360px' : '1091px'} mx='auto'>
@@ -136,7 +135,7 @@ function SolutionsSection() {
                         )}
                     </Box>
 
-                    <Box h='45px' bgColor='#393939' borderRadius='80px' py='4px' pl='4px' pr='20px' display='flex' columnGap='10px' textAlign='center' cursor='pointer'>
+                    <Box h='45px' bgColor='#393939' borderRadius='80px' py='4px' pl='4px' pr='20px' display='flex' columnGap='10px' textAlign='center' cursor='pointer' mt='30px'>
                             <Box h='37px' w='37px' alignContent='center' bgColor='#fff' borderRadius='50%' >
                                 <Image src='/download-icon.svg' width="22px" height='22px' ml='7px'/>
                             </Box>
@@ -149,49 +148,3 @@ function SolutionsSection() {
 }
 
 export default SolutionsSection;
-
-
-// {/* <Box position="relative" h={isSmallScreen ? '850px' : 'full'}>
-//                         {/* Використовуємо HStack або VStack залежно від ширини екрану */}
-//                         {isSmallScreen ? (
-//                             <VStack spacing={0}>
-//                             {() => {
-//                                 renderCircle('10% Initial Payment', 0, false);
-//                                 renderCircle(<Text alignItems='center'>5 years installment,<br/>0% overpayment</Text>, 1, false);
-//                                 renderCircle('Rental income ~ 15%', 2, true);
-//                             }}
-//                             {/* {['10% Initial Payment', <Text alignItems='center'>5 years installment,<br/>0% overpayment</Text>, 'Rental income ~ 15%'].map((text, index, arr) =>
-//                                 renderCircle(text, index, index === arr.length - 1)
-//                             )} */}
-
-//                             {/* <Circle
-//                                 size={isSmallScreen ? '353px' : '412px'}
-//                                 border="2px solid white"
-//                                 position={!isLast ? 'absolute' : 'relative'} // останній круг має бути відносним, щоб контейнер розтягувався
-//                                 left={!isSmallScreen && index !== 0 ? `${isSmallScreen ? index * 260 : index * 340}px` : undefined}
-//                                 top={isSmallScreen && index !== 0 ? `${offset}px` : undefined}
-//                                 zIndex={isLast ? 1 : 0}>
-//                                 <Text color="white" fontSize="lg" p={4}>10% Initial Payment</Text>
-//                             </Circle> */}
-
-                            
-//                             </VStack>
-//                         ) : (
-//                             <HStack spacing={0}>
-//                             {/* {['10% Initial Payment', <Text alignItems='center'>5 years installment,<br/>0% overpayment</Text>, 'Rental income ~ 15%'].map((text, index, arr) =>
-//                                 renderCircle(text, index, index === arr.length - 1)
-//                             )} */}
-
-//                             {() => {
-//                                 renderCircle('10% Initial Payment', 0, false);
-//                                 renderCircle(<Text alignItems='center'>5 years installment,<br/>0% overpayment</Text>, 1, false);
-//                                 renderCircle('Rental income ~ 15%', 2, true);
-//                             }}
-//                             {/* {() => {
-//                                 renderCircle('10% Initial Payment', index, index === arr.length - 1);
-//                                 renderCircle(<Text alignItems='center'>5 years installment,<br/>0% overpayment</Text>, index, index === arr.length - 1);
-//                                 renderCircle('Rental income ~ 15%', index, index === arr.length - 1, key=index);
-//                             }} */}
-//                             </HStack>
-//                         )}
-//                     </Box> */}

@@ -5,6 +5,7 @@ import PortfolioSection from "@/components/sections/PortfolioSection";
 import Head from "next/head";
 import StatisticSection from "@/components/sections/StatisticSection";
 import SolutionsSection from "@/components/sections/SolutionsSection";
+import AdvantagesSection from "@/components/sections/AdvantagesSection";
 
 const Home = () => {
     return (
@@ -20,6 +21,7 @@ const Home = () => {
             <PortfolioSection/>
             <StatisticSection/>
             <SolutionsSection/>
+            <AdvantagesSection/>
         </Box>
     </ChakraProvider>);
 }
