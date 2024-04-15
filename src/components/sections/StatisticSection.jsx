@@ -5,7 +5,7 @@ import { Box, Image, Text, Grid, Button, useBreakpointValue} from "@chakra-ui/re
 
 function StatisticSection() {
     const buttonSize = useBreakpointValue({ base: 'sm', md: 'md' });
-  const iconSize = useBreakpointValue({ base: '12px', md: '16px' });
+    const iconSize = useBreakpointValue({ base: '12px', md: '16px' });
     return (
         <Box width='100vw' h='900px'>
             <Box maxW='1400px' mx='auto' px='20px' py='40px' display='flex' flexDirection='row' columnGap='10px'>

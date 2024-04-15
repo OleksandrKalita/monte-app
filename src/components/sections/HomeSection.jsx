@@ -1,4 +1,4 @@
-import { Box, Button, Text, Link, Image} from "@chakra-ui/react";
+import { Box, Button, Text, Link, Image, Grid, useBreakpointValue } from "@chakra-ui/react";
 import { gsap } from "gsap";
 import { useGSAP } from "@gsap/react";
 import AnimationText from "@/hooks/AnimationText";
@@ -43,9 +43,13 @@ const HomeSection = () => {
               ease: 'power3.out',
             });
     }, [])
+
+    // const isWideScreen = useBreakpointValue({ base: false, lg: true });
+
     return(
-        <Box w='100%' h='900px' bg='#FFFFFF' >
-            <Box display='flex' h='900px' maxW='1400px' mx='auto' px='20px'>
+        <Box w='100%' h={{base: '852px', lg: '900px'}} bg='#FFFFFF' >
+
+            <Box maxW='1400px' mx='auto' px='20px' display='flex' flexDirection={{base: 'column', lg: 'row'}} >
                 <Box className="left-box" w='50%' h='100%'>
                     <Box pt='60px' pb='27px' pr='40px' h='900px' display='flex' flexDirection='column'>
                         <Box className="box__header" display='flex' justifyContent='space-between' alignContent='center'>

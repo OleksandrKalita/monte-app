@@ -83,7 +83,7 @@ function SolutionsSection() {
                                 <Box boxSize='78px' bgColor='#fff' borderRadius='50%' transition='all 0.4s' mr='20px'
                                     _hover={{bgColor: '#D5E7EE', pt: '5px'}}>
                                     <Image src='arrow-icon.svg' width='60px' height='60px' transform='rotate(135deg)'/>
-                                </Box>
+                                </Box> 
                             </Box>
                         </Box>
 

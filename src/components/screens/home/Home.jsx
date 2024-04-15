@@ -6,6 +6,9 @@ import Head from "next/head";
 import StatisticSection from "@/components/sections/StatisticSection";
 import SolutionsSection from "@/components/sections/SolutionsSection";
 import AdvantagesSection from "@/components/sections/AdvantagesSection";
+import PartnersSection from "@/components/sections/PartnersSection";
+import QuestionsSection from "@/components/sections/QustionsSection";
+import FooterSection from "@/components/sections/FooterSection";
 
 const Home = () => {
     return (
@@ -22,6 +25,9 @@ const Home = () => {
             <StatisticSection/>
             <SolutionsSection/>
             <AdvantagesSection/>
+            <PartnersSection/>
+            <QuestionsSection/>
+            <FooterSection/>
         </Box>
     </ChakraProvider>);
 }
