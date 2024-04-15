@@ -1,13 +1,20 @@
 import AnimationComponent from "@/hooks/AnimationComponent";
 import AnimationText from "@/hooks/AnimationText";
+import SepecialAnimationComponents from "@/hooks/SepecialAnimationComponents";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { useEffect, useRef, useState } from "react";
 
-const { Box, Text, Stack, Image } = require("@chakra-ui/react");
+const { Box, Text, Stack, Image, useBreakpointValue, Grid, Link } = require("@chakra-ui/react");
 
 function PortfolioSection() {
     const [numPortfolio, setNumPortfolio] = useState(1);
+
+    const [isMobile, setMobile] = useState(false);
+    const isMob = useBreakpointValue({ base: true, lg: false });
+    useEffect(() => {
+        setMobile(isMob);
+    }, [isMob]);
 
     useGSAP(() => {
         gsap.fromTo('.svg-image', 
@@ -64,10 +71,10 @@ function PortfolioSection() {
 
     return (
         <Box w='100vw' bgColor='#232323'>
-            <Box maxW='1400px' m='auto' py='100px' px='20px'>
-                <Box display='flex' justifyContent='space-between'>
-                    <Text fontSize='56px' color='#FFF'>Explore Our Property Portfolio</Text>
-                    <Box w='330px' h='50px' bgColor='#393939' borderRadius='8px' p='4px'>
+            <Box maxW='1400px' m='auto' py={{base: '80px', lg: '100px'}} px='20px' textAlign={'center'}>
+                <Box display='flex' flexDirection={{base: 'column', lg: 'row'}} justifyContent='space-between'>
+                    <Text fontSize={{base: '36px', lg: '56px'}} color='#FFF'>Explore Our Property Portfolio</Text>
+                    <Box minW={{base: '353px', lg: '330px'}}  h='50px' bgColor='#393939' borderRadius='8px' p='4px' mx={{base: 'auto', lg: '0px'}} my={{base: '40px', lg: 'auto'}}>
                         <Stack boxSize='100%' display='flex' flexDirection='row'>
                             <Box width='33.333%' alignContent='center' textAlign='center' borderRadius='8px' cursor='pointer' transition='all 0.5s'
                                 bgColor={numPortfolio === 1 && '#fff'}
@@ -93,8 +100,145 @@ function PortfolioSection() {
                         </Stack>
                     </Box>
                 </Box>
+                
+                <Box pt={{base: '0px', lg: '40px'}} display='flex' flexDirection='column' rowGap={{base: '20px', lg: '40px'}}>
+                    <Grid w='100%' display='flex' flexDirection={{base: 'column', lg: 'row'}} columnGap='40px' rowGap='20px'>
 
-                <Box display='flex' flexDirection='column' rowGap='40px' pt='100px'>
+                        <Box position="relative" width={{lg: '50%'}}   mx='auto' overflow='hidden'>
+                            <SepecialAnimationComponents
+                                animationFrom={{ x: 0, autoAlpha: 0, scale: 0.5 }}
+                                animationTo={{x: 0, autoAlpha: 1, scale: 1, duration: 1.5, ease: 'power3.out'}}
+                                Component={() => (
+                                    <Image src='portfolio-images/port-image-1.svg'  height='100%'/>
+                                )}/>
+                                <Box position='absolute' bottom='30px' left='30px'>
+                                    <Box display='flex' columnGap='57px'>
+                                </Box>
+                            </Box>
+                            <Box position='absolute' top={{base: '15px', lg: '40px'}} left={{base: '15px', lg: '40px'}}  textAlign='left'>
+                                <AnimationText lines={['Azure Heights', 'Luxury Residences']} style={{fontSize:'22px',color:'#fff', fontWeight: '600'}} delay={0.2}/>
+                            </Box>
+                            <Box position='absolute' top={{base: '15px', lg: '40px'}}  right={{base: '15px', lg: '40px'}}  boxSize='52px' borderRadius='50%' bgColor='#fff' textAlign='center'>
+                                <Image src="/arrow-icon.svg" width='38px' height='38px' mt='16px' ml='6px' transition='all 0.4s'
+                                _hover={{transform: 'translateX(3px) translateY(-3px)'}}/>
+                            </Box>
+                            <Box position='absolute' bottom={{base: '15px', lg: '40px'}} left={{base: '15px', lg: '40px'}} display='flex' columnGap='4px'>
+                                <Box w='113px' h='82px' borderRadius='18px' bgColor='#fff' py='16px' px='12px' display='flex' flexDirection='column' justifyContent='space-between'>
+                                    <Text fontSize='12px' color='#2E2F30'>Price</Text>
+                                    <Text fontSize='16px' color='#000'>from $290k</Text>
+                                </Box>
+                                <Box w='113px' h='82px' borderRadius='18px' bgColor='#fff' py='16px' px='12px' display='flex' flexDirection='column' justifyContent='space-between'>
+                                    <Text fontSize='12px' color='#2E2F30'>Price</Text>
+                                    <Text fontSize='16px' color='#000'>from $290k</Text>
+                                </Box>
+                                <Box w='113px' h='82px' borderRadius='18px' bgColor='#fff' py='16px' px='12px' display='flex' flexDirection='column' justifyContent='space-between'>
+                                    <Text fontSize='12px' color='#2E2F30'>Price</Text>
+                                    <Text fontSize='16px' color='#000'>from $290k</Text>
+                                </Box>
+                                <Box w='113px' h='82px' borderRadius='18px' bgColor='#fff' py='16px' px='12px' display='flex' flexDirection='column' justifyContent='space-between'>
+                                    <Text fontSize='12px' color='#2E2F30'>Price</Text>
+                                    <Text fontSize='16px' color='#000'>from $290k</Text>
+                                </Box>
+                                <Box w='113px' h='82px' borderRadius='18px' bgColor='#fff' py='16px' px='12px' display='flex' flexDirection='column' justifyContent='space-between'>
+                                    <Text fontSize='12px' color='#2E2F30'>Price</Text>
+                                    <Text fontSize='16px' color='#000'>from $290k</Text>
+                                </Box>
+                            </Box>
+                        </Box>
+
+                        <Box position="relative" width={{lg: '50%'}}   mx='auto'>
+                            <SepecialAnimationComponents
+                                animationFrom={{ x: 0, autoAlpha: 0, scale: 0.5 }}
+                                animationTo={{x: 0, autoAlpha: 1, scale: 1, duration: 1.5, ease: 'power3.out'}}
+                                Component={() => (
+                                    <Image src='portfolio-images/port-image-2.svg'  height='100%'/>
+                            )}/>
+                            <Box position='absolute' top={{base: '15px', lg: '40px'}}  right={{base: '15px', lg: '40px'}}  boxSize='52px' borderRadius='50%' bgColor='#fff' textAlign='center'>
+                                <Image src="/arrow-icon.svg" width='38px' height='38px' mt='16px' ml='6px' transition='all 0.4s'
+                                _hover={{transform: 'translateX(3px) translateY(-3px)'}}/>
+                            </Box>
+                            <Box position='absolute' bottom={{base: '15px', lg: '40px'}}  left={{base: '15px', lg: '40px'}}  display='flex'>
+                                <Text fontSize={{base: '18px', lg: '22px'}} color='#fff' fontWeight='800'>Azure Heights Luxury Residences</Text>
+                            </Box>
+                        </Box>
+                    </Grid>
+
+                    <Grid w='100%' display='flex' flexDirection={{base: 'column', lg: 'row'}} columnGap='40px' rowGap='20px'>
+
+                        <Box position="relative" width={{lg: '50%'}}   mx='auto'>
+                            <SepecialAnimationComponents
+                                animationFrom={{ x: 0, autoAlpha: 0, scale: 0.5 }}
+                                animationTo={{x: 0, autoAlpha: 1, scale: 1, duration: 1.5, ease: 'power3.out'}}
+                                Component={() => (
+                                    <Image src='portfolio-images/port-image-3.svg'  height='100%'/>
+                            )}/>
+                            <Box position='absolute' top={{base: '15px', lg: '40px'}}  right={{base: '15px', lg: '40px'}}  boxSize='52px' borderRadius='50%' bgColor='#fff' textAlign='center'>
+                                <Image src="/arrow-icon.svg" width='38px' height='38px' mt='16px' ml='6px' transition='all 0.4s'
+                                _hover={{transform: 'translateX(3px) translateY(-3px)'}}/>
+                            </Box>
+                            <Box position='absolute' bottom={{base: '15px', lg: '40px'}}  left={{base: '15px', lg: '40px'}}  display='flex'>
+                                <Text fontSize={{base: '18px', lg: '22px'}} color='#fff' fontWeight='800'>Azure Heights Luxury Residences</Text>
+                            </Box>
+                        </Box>
+
+                        <Box position="relative" width={{lg: '50%'}}   mx='auto'>
+                            <SepecialAnimationComponents
+                                animationFrom={{ x: 0, autoAlpha: 0, scale: 0.5 }}
+                                animationTo={{x: 0, autoAlpha: 1, scale: 1, duration: 1.5, ease: 'power3.out'}}
+                                Component={() => (
+                                    <Image src='portfolio-images/port-image-4.svg'  height='100%'/>
+                            )}/>
+                            <Box position='absolute' top={{base: '15px', lg: '40px'}}  right={{base: '15px', lg: '40px'}}  boxSize='52px' borderRadius='50%' bgColor='#fff' textAlign='center'>
+                                <Image src="/arrow-icon.svg" width='38px' height='38px' mt='16px' ml='6px' transition='all 0.4s'
+                                _hover={{transform: 'translateX(3px) translateY(-3px)'}}/>
+                            </Box>
+                            <Box position='absolute' bottom={{base: '15px', lg: '40px'}}  left={{base: '15px', lg: '40px'}}  display='flex'>
+                                <Text fontSize={{base: '18px', lg: '22px'}} color='#fff' fontWeight='800'>Azure Heights Luxury Residences</Text>
+                            </Box>
+                        </Box>
+                    </Grid>
+
+                    <Grid w='100%' display='flex' flexDirection={{base: 'column', lg: 'row'}} columnGap='40px' rowGap='20px'>
+
+                        <Box position="relative" width={{lg: '50%'}}   mx='auto'>
+                            <SepecialAnimationComponents
+                                animationFrom={{ x: 0, autoAlpha: 0, scale: 0.5 }}
+                                animationTo={{x: 0, autoAlpha: 1, scale: 1, duration: 1.5, ease: 'power3.out'}}
+                                Component={() => (
+                                    <Image src='portfolio-images/port-image-5.svg'  height='100%'/>
+                            )}/>
+                            <Box position='absolute' top={{base: '15px', lg: '40px'}}  right={{base: '15px', lg: '40px'}}  boxSize='52px' borderRadius='50%' bgColor='#fff' textAlign='center'>
+                                <Image src="/arrow-icon.svg" width='38px' height='38px' mt='16px' ml='6px' transition='all 0.4s'
+                                _hover={{transform: 'translateX(3px) translateY(-3px)'}}/>
+                            </Box>
+                            <Box position='absolute' bottom={{base: '15px', lg: '40px'}}  left={{base: '15px', lg: '40px'}}  display='flex'>
+                                <Text fontSize={{base: '18px', lg: '22px'}} color='#fff' fontWeight='800'>Azure Heights Luxury Residences</Text>
+                            </Box>
+                        </Box>
+
+                        <Box position="relative" width={{lg: '50%'}}   mx='auto'>
+                            <SepecialAnimationComponents
+                                animationFrom={{ x: 0, autoAlpha: 0, scale: 0.5 }}
+                                animationTo={{x: 0, autoAlpha: 1, scale: 1, duration: 1.5, ease: 'power3.out'}}
+                                Component={() => (
+                                    <Image src='portfolio-images/port-image-6.svg'  height='100%'/>
+                            )}/>
+                            <Box position='absolute' top={{base: '15px', lg: '40px'}}  right={{base: '15px', lg: '40px'}}  boxSize='52px' borderRadius='50%' bgColor='#fff' textAlign='center'>
+                                <Image src="/arrow-icon.svg" width='38px' height='38px' mt='16px' ml='6px' transition='all 0.4s'
+                                _hover={{transform: 'translateX(3px) translateY(-3px)'}}/>
+                            </Box>
+                            <Box position='absolute' top={{base: '15px', lg: '40px'}}  left={{base: '15px', lg: '40px'}}  display='flex'>
+                                <Box bgColor='#fff' w='173px' h='52px' borderRadius='80px' fontSize='18px' textAlign='center' pt='12px' transition='all 0.4s'
+                                    _hover={{bgColor: '#c0c0c0'}}>
+                                    Find On The Map
+                                </Box>
+                            </Box>
+                        </Box>
+                    </Grid>
+                </Box>
+
+                    
+                {/* <Box display='flex' flexDirection='column' rowGap='40px' pt='100px'>
                     <Box display='flex' justifyContent='space-between'>
                         <Box  className="animate-block" h='714px' w='660px'  position='relative' overflow='hidden' borderRadius='30px'>
                             <Image src='/portfolio-images/port-image-1.svg' width='100%' height='100%'/>
@@ -231,10 +375,10 @@ function PortfolioSection() {
                             </Box>
                         </Box>
                     </Box>
-                </Box>
+                </Box> */}
 
-                <Box pt='50px' display='flex' columnGap='30px' justifyContent='end'>
-                <Box  mr='180px' w='142px' h='45px' fontSize='18px' borderRadius='80px' bgColor='#D5E7EE' textAlign='center' pt='8px' _hover={{bgColor: '#9aa9af'}}>All Properties</Box>
+                <Box pt='50px' display='flex' flexDirection={{base: 'column', lg: 'row'}} columnGap='30px' rowGap='30px' justifyContent='end' w={'100%'} alignItems={{base: 'center', lg: 'normalize'}}>
+                    <Box  mr={{base: '0px', lg: '180px'}} w='142px' h='45px' fontSize='18px' borderRadius='80px' bgColor='#D5E7EE' textAlign='center' pt='8px' _hover={{bgColor: '#9aa9af'}}>All Properties</Box>
                     <Box color='#fff'>Don't Miss Out on Hot Deals!<br/>Follow Us on Social Media</Box>
                     <Box display='flex' columnGap='10px'>
                         <AnimationComponent delay={0.2} Component={() => (

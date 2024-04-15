@@ -1,6 +1,6 @@
 import React, { useRef, useState, useEffect } from 'react';
 import { useInView } from 'react-intersection-observer';
-import { Box, Text} from '@chakra-ui/react';
+import { Box, Text, useBreakpointValue} from '@chakra-ui/react';
 import Marquee from "react-fast-marquee";
 
 
@@ -113,10 +113,34 @@ function VideoSection () {
     }
     
     
+    const [isMobile, setMobile] = useState(false);
+    const isMob = useBreakpointValue({ base: true, lg: false });
+    useEffect(() => {
+        setMobile(isMob);
+    }, [isMob]);
 
+    if (isMobile) { 
+      return (<div style={{height: "809px", width: '100%', position: 'relative', overflow: 'hidden', display: 'flex', alignItems: 'center', justifyContent: 'center', backgroundColor: '#F8F5F2', transition: 'all 1.2s ease', ...wrapperStyles}}>
+      {/* <Text  position='absolute' top='30%' fontSize='56px' zIndex={4} flexWrap='nowrap' color='#FFF' textAlign={'center'}></Text> */}
+      <Marquee style={{position: 'absolute', zIndex: 2}} speed={120}>
+          <Text fontSize='56px' color='#FFF' fontWeight='700'>Apartments with an initial payment from $25,000</Text>
+      </Marquee>
+        <Box position='relative' w='790px'h='446px' overflow='hidden' borderRadius='30px' fill='cover' style={{...dynamicStyles, transition: 'all 0.8s ease'}}>
+          <video
+              width='100%'
+              height='100%'
+              autoPlay
+              loop
+              muted
+              src="/video/v-1.mp4"
+              type="video/mp4"
+          >
+          </video>
+        </Box>
+      </div>);
+    }
 
-    return (
-    <div ref={videoRef} style={{height: '809px', width: '100%', position: 'relative', overflow: 'hidden', display: 'flex', alignItems: 'center', justifyContent: 'center', backgroundColor: '#F8F5F2', transition: 'all 1.2s ease', ...wrapperStyles}}>
+    return (<div ref={videoRef} style={{height: "809px", width: '100%', position: 'relative', overflow: 'hidden', display: 'flex', alignItems: 'center', justifyContent: 'center', backgroundColor: '#F8F5F2', transition: 'all 1.2s ease', ...wrapperStyles}}>
     {/* <Text  position='absolute' top='30%' fontSize='56px' zIndex={4} flexWrap='nowrap' color='#FFF' textAlign={'center'}></Text> */}
     <Marquee style={{position: 'absolute', zIndex: 2}} speed={120}>
         <Text fontSize='56px' color='#FFF' fontWeight='700'>Apartments with an initial payment from $25,000</Text>
@@ -133,8 +157,7 @@ function VideoSection () {
         >
         </video>
       </Box>
-    </div>
-  );
+    </div>);
 };
 
 export default VideoSection;
