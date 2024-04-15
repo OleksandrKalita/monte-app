@@ -8,7 +8,7 @@ function VideoSection () {
     const videoRef = useRef(null);
     const [visibility, setVisibility] = useState(0);
     const [position, setPosition] = useState('before');
-
+    
     useEffect(() => {
         const observer = new IntersectionObserver(
           (entries) => {

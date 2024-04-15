@@ -1,9 +1,16 @@
 import AnimationText from "@/hooks/AnimationText";
-import { Box, Image, Text, HStack, VStack, Circle, useMediaQuery} from "@chakra-ui/react"
+import { Box, Image, Text, HStack, VStack, Circle, useMediaQuery, useBreakpointValue} from "@chakra-ui/react"
+import { useEffect, useState } from "react";
 import Marquee from "react-fast-marquee";
 
 function SolutionsSection() {
     const [isSmallScreen] = useMediaQuery('(max-width: 1137px)');
+
+    const [isMobile, setMobile] = useState(false);
+    const isMob = useBreakpointValue({ base: true, lg: false });
+    useEffect(() => {
+        setMobile(isMob);
+    }, [isMob]);
 
     // Рендер круга з текстом
     const renderCircle = (text, index, isLast) => {
@@ -28,9 +35,10 @@ function SolutionsSection() {
         <Box w='100%'  bgColor='#232323'>
             <Box maxW='1400px' px='20px' py='100px' mx='auto'>
 
-                <Box w='100%' display='flex'>
-                    <Box w='50%' display='flex' flexDirection='column' rowGap='30px'>
-                        <AnimationText style={{fontSize: '58px', color: '#fff', fontWeight: '500'}} lines={['Tailored Solutions', 'for Your Real Estate', 'Needs']}/>
+                <Box w='100%' display='flex' flexDirection={{base: 'column', lg: 'row'}}>
+                    <Box w={{base: '100%', lg: '50%'}} display='flex' flexDirection='column' rowGap='30px'>
+                        {isMobile ? <AnimationText style={{fontSize: '38px', color: '#fff', fontWeight: '500'}} lines={['Tailored Solutions', 'for Your Real Estate', 'Needs']}/> : 
+                        <AnimationText style={{fontSize: '58px', color: '#fff', fontWeight: '500'}} lines={['Tailored Solutions', 'for Your Real Estate', 'Needs']}/>}
                         <Box display='flex' columnGap='12px' alignItems='center' cursor='pointer' transition='all 0.4s'
                             _hover={{columnGap: '20px'}}>
                             <Box bgColor='#D5E7EE' boxSize='12px' borderRadius='50%'></Box>
@@ -40,19 +48,19 @@ function SolutionsSection() {
                             </Box>
                         </Box>
                     </Box>
-                    <Box w='50%' display='flex' flexDirection='column' rowGap='30px'>
+                    <Box w={{base: '100%', lg: '50%'}} display='flex' flexDirection='column' rowGap='30px' pt={{base: '30px', lg: '0px'}}>
 
                         <Box w='100%' h='120px' bgColor='#fff' borderRadius='80px' p='10px' display='flex' justifyContent='flex-start' alignItems='center' columnGap='20px'>
                             <Image src='48634.svg' />
                             <Box w='100%' display='flex' justifyContent='space-between' alignItems='center'>
                                 <Box position='relative' mt='-8px' pt='8px' pr='17px'>
-                                    <Text fontSize='28px' fontWeight='500' color='#000'>Property Sales</Text>
+                                    <Text fontSize={{base: '22px', lg: '28px'}} fontWeight='500' color='#000'>Property Sales</Text>
                                     <Text fontSize='14px' color='#000' position='absolute' top={0} right={0}>01</Text>
                                 </Box>
                                 {/* <AnimationText style={{fontSize: '28px', fontWeight: '500', color: '#000'}} lines={['Property Sales']}/> */}
                                 <Box boxSize='78px' bgColor='#fff' borderRadius='50%' transition='all 0.4s' mr='20px'
                                     _hover={{bgColor: '#D5E7EE', pt: '5px'}}>
-                                    <Image src='arrow-icon.svg' width='60px' height='60px' transform='rotate(135deg)'/>
+                                    <Image src='arrow-icon.svg' boxSize={'60px'} transform='rotate(135deg)'/>
                                 </Box>
                             </Box>
                         </Box>
@@ -61,7 +69,7 @@ function SolutionsSection() {
                             <Image src='48635.svg' />
                             <Box w='100%' display='flex' justifyContent='space-between' alignItems='center'>
                                 <Box position='relative' mt='-8px' pt='8px' pr='17px'>
-                                    <Text fontSize='28px' fontWeight='500' color='#000'>Property Management</Text>
+                                    <Text fontSize={{base: '22px', lg: '28px'}} fontWeight='500' color='#000'>Property Management</Text>
                                     <Text fontSize='14px' color='#000' position='absolute' top={0} right={0}>02</Text>
                                 </Box>
                                 {/* <AnimationText style={{fontSize: '28px', fontWeight: '500', color: '#000'}} lines={['Property Sales']}/> */}
@@ -76,7 +84,7 @@ function SolutionsSection() {
                             <Image src='48636.svg' />
                             <Box w='100%' display='flex' justifyContent='space-between' alignItems='center'>
                                 <Box position='relative' mt='-8px' pt='8px' pr='17px'>
-                                    <Text fontSize='28px' fontWeight='500' color='#000'>Investment Consultation</Text>
+                                    <Text fontSize={{base: '22px', lg: '28px'}} fontWeight='500' color='#000'>Investment Consultation</Text>
                                     <Text fontSize='14px' color='#000' position='absolute' top={0} right={0}>03</Text>
                                 </Box>
                                 {/* <AnimationText style={{fontSize: '28px', fontWeight: '500', color: '#000'}} lines={['Property Sales']}/> */}
@@ -91,7 +99,7 @@ function SolutionsSection() {
                             <Image src='48637.svg' />
                             <Box w='100%' display='flex' justifyContent='space-between' alignItems='center'>
                                 <Box position='relative' mt='-8px' pt='8px' pr='17px'>
-                                    <Text fontSize='28px' fontWeight='500' color='#000'>Market Analysis</Text>
+                                    <Text fontSize={{base: '22px', lg: '28px'}} fontWeight='500' color='#000'>Market Analysis</Text>
                                     <Text fontSize='14px' color='#000' position='absolute' top={0} right={0}>04</Text>
                                 </Box>
                                 {/* <AnimationText style={{fontSize: '28px', fontWeight: '500', color: '#000'}} lines={['Property Sales']}/> */}
@@ -117,7 +125,8 @@ function SolutionsSection() {
             <Box maxW='1400px' px='20px' py='30px' mx='auto'>
 
                 <Box w='100%' display='flex' flexDirection='column' rowGap='80px' alignItems='center' pb='50px'>
-                    <AnimationText style={{color: '#fff', fontSize: '56px' }} lines={['Path to Smart Ownership']}/>
+                    {isMobile ? <AnimationText style={{color: '#fff', fontSize: '36px', textAlign: 'center' }} lines={['Path to Smart Ownership']}/> : 
+                    <AnimationText style={{color: '#fff', fontSize: '56px' }} lines={['Path to Smart Ownership']}/>}
                     
                     <Box position="relative" h={isSmallScreen ? '850px' : 'full'} w={isSmallScreen ? '360px' : '1091px'} mx='auto'>
                         {isSmallScreen ? (

@@ -1,8 +1,15 @@
 import AnimationText from "@/hooks/AnimationText";
 import SepecialAnimationComponents from "@/hooks/SepecialAnimationComponents";
-import { Box, Grid, Image, Text, Input } from "@chakra-ui/react";
+import { Box, Grid, Image, Text, Input, useBreakpointValue } from "@chakra-ui/react";
+import { useEffect, useState } from "react";
 
 function FooterSection() {
+    const [isMobile, setMobile] = useState(false);
+    const isMob = useBreakpointValue({ base: true, lg: false });
+    useEffect(() => {
+        setMobile(isMob);
+    }, [isMob]);
+
     return (
         <Box>
             <Box w='100vw' bgColor='#F8F5F2'>
@@ -17,10 +24,11 @@ function FooterSection() {
                                         <Image src="/footer-image.svg" width="full" height="auto" />
                                 )}/>
                                 <Box position="absolute" top="0" left="0" pt="40px" pl='25px'>
-                                    <AnimationText style={{fontSize: '68px', fontWeight: '800', color: '#fff'}} lines={['Built Your Future', 'With Us']} />
+                                    {isMobile ? <AnimationText style={{fontSize: '36px', fontWeight: '800', color: '#fff'}} lines={['Built Your Future', 'With Us']} /> : 
+                                    <AnimationText style={{fontSize: '68px', fontWeight: '800', color: '#fff'}} lines={['Built Your Future', 'With Us']} />}
                                 </Box>
-                                <Box position="absolute" top="220px" left="0" pl="25px" pt='25px'>
-                                    <Box bgColor='#fff' color='#000' fontSize='20px' borderRadius='80px' px='18px' py='12px' cursor='pointer'>
+                                <Box position="absolute" top={{base: '140px', lg: '220px'}} left="0" pl="25px" pt='25px'>
+                                    <Box bgColor='#fff' color='#000' fontSize={{base: '16px', lg: '20px'}} borderRadius='80px' px={{base: '12px', lg: '18px'}} py={{base: '8px', lg: '12px'}} cursor='pointer'>
                                         Start Your Journey
                                     </Box>
                                 </Box> 
@@ -33,7 +41,7 @@ function FooterSection() {
                 <Box maxW='1400px' px='20px' mx='auto' display='flex' justifyContent='space-between' flexWrap='wrap' rowGap='70px'>
                     <Box display='flex' flexDirection='column' justifyContent='space-between' rowGap='70px'>
                         <Box>
-                            <Image className="svg-image" src='/header_logo_image.svg' width='169px' height='58px' mb='25px'/>
+                            <Image className="svg-image" src='/images/home/logotype-icon.svg' width='169px' height='58px' mb='25px'/>
                             <AnimationText style={{fontSize: '16px', color: 'rgba(0,0,0,0.8)'}} lines={['Building Your Dreams In Real Estate']}/>
                         </Box>
 

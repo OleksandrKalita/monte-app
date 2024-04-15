@@ -1,14 +1,19 @@
-import React from "react";
+import React, { useEffect } from "react";
 import AnimationText from "@/hooks/AnimationText";
 import { useState } from "react";
 
-const { Box, Text, Image } = require("@chakra-ui/react");
+const { Box, Text, Image, useBreakpointValue } = require("@chakra-ui/react");
 function QuestionsSection() {
+    const [isMobile, setMobile] = useState(false);
+    const isMob = useBreakpointValue({ base: true, lg: false });
+    useEffect(() => {
+        setMobile(isMob);
+    }, [isMob]);
 
     return(
         <Box w='100%' bgColor='#F8F5F2'>
-            <Box maxW='1400px' px='20px' py='100px' mx='auto' display='flex' >
-                <Box w='50%'>
+            <Box maxW='1400px' px='20px' py='100px' mx='auto' display='flex'  flexDirection={{base: 'column', lg: 'row'}}>
+                <Box w={{base: '100%', lg: '50%'}}>
                     <Box display='flex' columnGap='12px' alignItems='center' cursor='pointer' transition='all 0.4s'
                         _hover={{columnGap: '20px'}}>
                         <Box bgColor='#000' boxSize='12px' borderRadius='50%'></Box>
@@ -19,7 +24,7 @@ function QuestionsSection() {
                     <AnimationText style={{fontSize: '56px', color: '#000', fontWeight: '500'}} lines={['Frequent Asked', 'Questions']}/>
                     <AnimationText style={{fontSize: '16px', color: 'rgba(0, 0, 0, 0.5)'}} lines={['At Monte, we offer more than just real estate', 'services; we provide an unparalleled experience', 'tailored to meet your needs and exceed your', 'expectations.']} />
                 </Box>
-                <Box w='50%' display='flex' columnGap='40px' flexWrap='wrap' rowGap='95px'  position='relative'>
+                <Box w={{base: '100%', lg: '50%'}} display='flex' columnGap='40px' flexWrap='wrap' rowGap='95px'  position='relative' pt={{base: '20px', lg: '0px'}}>
                     
                     <Box  bgColor='#fff' borderRadius='20px' px='20px' py='50px'>
                         <Box borderTop='1px solid rgba(0, 0, 0, 0.2)' borderBottom='1px solid rgba(0, 0, 0, 0.2)' display='flex' justifyContent='space-between' columnGap='10px' alignItems='center' transition='all 0.4s'>

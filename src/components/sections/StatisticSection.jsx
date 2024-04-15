@@ -2,15 +2,22 @@ import AnimatedNumber from "@/hooks/AnimatedNumber";
 import AnimationText from "@/hooks/AnimationText";
 import SepecialAnimationComponents from "@/hooks/SepecialAnimationComponents";
 import { Box, Image, Text, Grid, Button, useBreakpointValue} from "@chakra-ui/react";
+import { useEffect, useState } from "react";
 
 function StatisticSection() {
     const buttonSize = useBreakpointValue({ base: 'sm', md: 'md' });
     const iconSize = useBreakpointValue({ base: '12px', md: '16px' });
-    return (
-        <Box width='100vw' h='900px'>
-            <Box maxW='1400px' mx='auto' px='20px' py='40px' display='flex' flexDirection='row' columnGap='10px'>
 
-                <Box w='50%' display='flex' flexDirection='column'>
+    const [isMobile, setMobile] = useState(false);
+    const isMob = useBreakpointValue({ base: true, lg: false });
+    useEffect(() => {
+        setMobile(isMob);
+    }, [isMob]);
+    return (
+        <Box width='100vw' maxH={{base: '2200px', lg: 'none'}} h={{base: 'none', lg: '900px'}}>
+            <Box maxW='1400px' mx='auto' px='20px' py='40px' display='flex' flexDirection={{base: 'column', lg: 'row'}} columnGap='10px'>
+
+                <Box w={{base: '100%', lg: '50%'}} display='flex' flexDirection='column'>
                     <AnimationText style={{fontSize: '16px', color: 'rgba(0, 0, 0, 0.5)'}} lines={['At Golden Gate Properties, we offer more than', 'just real estate services; we provide an unparalleled', 'experience tailored to meet your needs and exceed', 'your expectations.']} />
                     <Box display='flex' columnGap='18px' alignItems='center' pt='50px'>
                         <Box width='260px' display='flex'>
@@ -45,6 +52,48 @@ function StatisticSection() {
                         </Box>
                         <AnimationText style={{fontSize: '16px', color: 'rgba(0, 0, 0, 0.5)'}} lines={['Meet Our', 'Professional Team']}/>
                     </Box>
+                    <Grid width='full' display={{base: 'block', lg: 'none'}} pt='50px' pb='30px'>
+                        <Box position="relative" width="full" height="auto" colSpan={{ base: 2, md: 1 }}>
+                            <SepecialAnimationComponents 
+                                    animationFrom={{ x: 0, autoAlpha: 0, scale: 0.5 }}
+                                    animationTo={{x: 0, autoAlpha: 1, scale: 1, duration: 1.5, ease: 'power3.out'}}
+                                    Component={() => (
+                                    <Image src="/statisctic-dream-image.svg" width="full" height="auto" mx='auto ' />
+                            )}/>
+                            <Box position="absolute" top="0" right="0" p="20px">
+                                <SepecialAnimationComponents 
+                                        delay={0.8}
+                                        animationFrom={{ x: '-200%', autoAlpha: 0, scale: 0.5 }}
+                                        animationTo={{x: 0, autoAlpha: 1, scale: 1, duration: 1.5, ease: 'power3.out'}}
+                                        Component={() => (
+                                        <Box h='40px' bgColor='#D5E7EE' borderRadius='80px' py='3px' pl='3px' pr='20px' display='flex' columnGap='10px' textAlign='center' cursor='pointer'>
+                                            <Box h='37px' w='37px' alignContent='center' bgColor='#fff' borderRadius='50%' >
+                                                <Image src='/phone-icon.svg' width={10} height={10} pt='8px' />
+                                            </Box>
+                                            <Text color='#000' fontSize='16px' fontWeight={500} pt='5px'>Contact Us Now</Text>
+                                        </Box>
+                                )}/>
+                            </Box>
+                            <SepecialAnimationComponents 
+                                        delay={0.8}
+                                        animationFrom={{ y: '200%', autoAlpha: 0, scale: 0.5 }}
+                                        animationTo={{y: 0, autoAlpha: 1, scale: 1, duration: 1.5, ease: 'power3.out'}}
+                                        Component={() => (
+                                        <Box position="absolute" right="0" bottom="0" p="20px">
+                                            <Box w='210px' h='69px' bgColor='#fff' borderRadius='20px' p='9px' display='flex' columnGap='20px' alignItems='center'>
+                                                <Box position='relative' boxSize='50px'>
+                                                    <Image src="avatar-1-icon.svg"/>
+                                                    <Box boxSize='12px' position='absolute' top={0} right={0} borderRadius='50%' bgColor='#fff' border='4px solid #000'></Box>
+                                                </Box>
+                                                <Box display='flex' flexDirection='column' justifyContent='space-between'>
+                                                <AnimationText style={{fontSize: '10px', color: 'rgba(25,25,25,0.5)'}} lines={['Special Offer']}/>
+                                                <AnimationText style={{fontSize: '10px', color: '#000', fontWeight: '500'}} lines={['Get The Consultation', 'With Our Expert']}/>
+                                                </Box>
+                                            </Box>
+                                        </Box>
+                            )}/>
+                        </Box>
+                    </Grid>
                     <Box>
                         <Box display='flex' columnGap='63px' py='50px' alignItems='center' borderBottom='1px solid rgba(35,35,35,0.2)'>
                             <AnimatedNumber text='+' end={100} duration={10} />
@@ -62,13 +111,13 @@ function StatisticSection() {
                 </Box>
 
                 <Box >
-                    <Grid width="full">
+                    <Grid width='full' display={{base: 'none', lg: 'block'}}>
                         <Box position="relative" width="full" height="auto" colSpan={{ base: 2, md: 1 }}>
                             <SepecialAnimationComponents 
                                     animationFrom={{ x: 0, autoAlpha: 0, scale: 0.5 }}
                                     animationTo={{x: 0, autoAlpha: 1, scale: 1, duration: 1.5, ease: 'power3.out'}}
                                     Component={() => (
-                                    <Image src="/statisctic-dream-image.svg" width="full" height="auto" />
+                                    <Image src="/statisctic-dream-image.svg" width="full" height="auto" mx='auto ' />
                             )}/>
                             <Box position="absolute" top="0" right="0" p="20px">
                                 <SepecialAnimationComponents 
