@@ -2,7 +2,7 @@ import { Box } from "@chakra-ui/react";
 import gsap from "gsap";
 import { useEffect, useRef } from "react";
 
-export function AnimationText({ lines, style, delay = 0.3 }) {
+function AnimationText({ lines, style, delay = 0.3 }) {
   const ref = useRef();
   const observer = useRef();
 
@@ -16,11 +16,11 @@ export function AnimationText({ lines, style, delay = 0.3 }) {
               { y: 100, opacity: 0 },
               { y: 0, opacity: 1, duration: 1, delay }
             );
-            observer.current.unobserve(entry.target); // Опціонально, щоб анімація не повторювалася
+            observer.current.unobserve(entry.target);
           }
         });
       },
-      { threshold: 0.5 } // Тут можна налаштувати, наскільки елемент має бути видимий, щоб спрацювала анімація
+      { threshold: 0.5 }
     );
 
     if (ref.current) {

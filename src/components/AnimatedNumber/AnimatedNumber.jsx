@@ -31,12 +31,12 @@ function AnimatedNumber({ text, end, duration = 100 }) {
   }, [ref, end, duration]);
 
   const startAnimation = () => {
-    const endValue = end || 100; // Кінцеве значення для анімації
-    let currentDuration = duration; // Початкова тривалість інтервалу
+    const endValue = end || 100; 
+    let currentDuration = duration; 
 
     const calculateInterval = (current, end) => {
       const remaining = end - current;
-      return (remaining / end) * (duration * 0.1); // Зменшуємо інтервал ближче до кінця
+      return (remaining / end) * (duration * 0.1);
     };
 
     const intervalId = setInterval(() => {

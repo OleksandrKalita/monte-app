@@ -1,9 +1,9 @@
-import AnimationText from "@/hooks/AnimationText";
-import SepecialAnimationComponents from "@/hooks/SepecialAnimationComponents";
+import AnimationText from "@/components/AnimationText/AnimationText";
+import SepecialAnimationComponents from "@/components/SepecialAnimationComponents/SepecialAnimationComponents";
 import { Box, Grid, Image, Text, Input, useBreakpointValue } from "@chakra-ui/react";
 import { useEffect, useState } from "react";
 
-function FooterSection() {
+function Footer() {
     const [isMobile, setMobile] = useState(false);
     const isMob = useBreakpointValue({ base: true, lg: false });
     useEffect(() => {
@@ -103,4 +103,4 @@ function FooterSection() {
     );
 }
 
-export default FooterSection;
+export default Footer;

@@ -1,4 +1,4 @@
-import AnimationText from "@/hooks/AnimationText";
+import AnimationText from "@/components/AnimationText/AnimationText";
 import { Box, Image, Text, HStack, VStack, Circle, useMediaQuery, useBreakpointValue} from "@chakra-ui/react"
 import { useEffect, useState } from "react";
 import Marquee from "react-fast-marquee";

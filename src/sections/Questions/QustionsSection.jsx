@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import AnimationText from "@/hooks/AnimationText";
+import AnimationText from "@/components/AnimationText/AnimationText";
 import { useState } from "react";
 
 const { Box, Text, Image, useBreakpointValue } = require("@chakra-ui/react");

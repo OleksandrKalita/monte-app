@@ -1,6 +1,6 @@
-import AnimationComponent from "@/hooks/AnimationComponent";
-import AnimationText from "@/hooks/AnimationText";
-import SepecialAnimationComponents from "@/hooks/SepecialAnimationComponents";
+import AnimationComponent from "@/components/AnimationComponent/AnimationComponent";
+import AnimationText from "@/components/AnimationText/AnimationText";
+import SepecialAnimationComponents from "@/components/SepecialAnimationComponents/SepecialAnimationComponents";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { useEffect, useRef, useState } from "react";

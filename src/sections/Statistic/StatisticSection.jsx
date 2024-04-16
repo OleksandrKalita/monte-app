@@ -1,6 +1,6 @@
-import AnimatedNumber from "@/hooks/AnimatedNumber";
-import AnimationText from "@/hooks/AnimationText";
-import SepecialAnimationComponents from "@/hooks/SepecialAnimationComponents";
+import AnimatedNumber from "@/components/AnimatedNumber/AnimatedNumber";
+import AnimationText from "@/components/AnimationText/AnimationText";
+import SepecialAnimationComponents from "@/components/SepecialAnimationComponents/SepecialAnimationComponents";
 import { Box, Image, Text, Grid, Button, useBreakpointValue} from "@chakra-ui/react";
 import { useEffect, useState } from "react";
 

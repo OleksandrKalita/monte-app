@@ -1,4 +1,4 @@
-import AnimationText from "@/hooks/AnimationText";
+import AnimationText from "../../components/AnimationText/AnimationText";
 
 const { Box, Text, Image } = require("@chakra-ui/react");
 
