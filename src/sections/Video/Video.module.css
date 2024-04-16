@@ -17,6 +17,7 @@
     margin-right: auto;
     overflow: hidden;
     border-radius: 30px;
+    transition: all 0.4s;
 }
 .video {
     width: 100%;
