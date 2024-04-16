@@ -535,7 +535,7 @@ import styles from './Video.module.css';
 
 import React, { useRef, useState, useEffect } from 'react';
 import { useInView } from 'react-intersection-observer';
-import { Box, Text, useBreakpointValue} from '@chakra-ui/react';
+import { Box, Text,Image, useBreakpointValue} from '@chakra-ui/react';
 import Marquee from "react-fast-marquee";
 
 
@@ -591,9 +591,13 @@ function VideoSection () {
 
     if(visibility > 0.7) {
         dynamicStyles = {
-            width: '100vw',
-            height:'100vh',
+            'margin-top': '0px',
+            width: '100%',
+            height:'100%',
             borderRadius: '0px',
+        },
+        wrapperStyles = {
+          height: 0
         }
     }
     // if(position === 'befor' && visibility <= 0.6) {
@@ -648,51 +652,74 @@ function VideoSection () {
     // }
     
     
-    const [isMobile, setMobile] = useState(false);
-    const isMob = useBreakpointValue({ base: true, lg: false });
-    useEffect(() => {
-        setMobile(isMob);
-    }, [isMob]);
+    const [isNarrowScreen, setIsNarrowScreen] = useState(false);
 
-    if (isMobile) { 
-      return (<div style={{height: "809px", width: '100%', position: 'relative', overflow: 'hidden', display: 'flex', alignItems: 'center', justifyContent: 'center', backgroundColor: '#F8F5F2', transition: 'all 1.2s ease', ...wrapperStyles}}>
-      {/* <Text  position='absolute' top='30%' fontSize='56px' zIndex={4} flexWrap='nowrap' color='#FFF' textAlign={'center'}></Text> */}
-      <Marquee style={{position: 'absolute', zIndex: 2}} speed={120}>
-          <Text fontSize='56px' color='#FFF' fontWeight='700'>Apartments with an initial payment from $25,000</Text>
-      </Marquee>
-        <Box position='relative' w='790px'h='446px' overflow='hidden' borderRadius='30px' fill='cover' style={{...dynamicStyles, transition: 'all 0.8s ease'}}>
-          <video
-              width='100%'
-              height='100%'
-              autoPlay
-              loop
-              muted
-              src="/video/v-1.mp4"
-              type="video/mp4"
-          >
-          </video>
+  useEffect(() => {
+    const checkScreenSize = () => {
+        setIsNarrowScreen(window.innerWidth < 792);
+    };
+
+    checkScreenSize();
+
+    window.addEventListener('resize', checkScreenSize);
+
+    return () => {
+        window.removeEventListener('resize', checkScreenSize);
+    };
+  }, []);
+
+
+  return (<div className={styles.wrapper} ref={videoRef}>
+    <div className={styles.container}>
+      <div  style={{transition: 'all 0.4s',...wrapperStyles}}>
+      <Box pt={{base: '50px', lg: '80px'}} mx='auto' w='max-content' display='flex' columnGap='12px'>
+        <Box bgColor='#232323' boxSize='46px' borderRadius='50%' alignContent='center' pl='11px' cursor='pointer'>
+          <Image src='house2.svg'/>
         </Box>
-      </div>);
-    }
-
-    return (<div ref={videoRef} style={{height: "809px", width: '100%', position: 'relative', overflow: 'hidden', display: 'flex', alignItems: 'center', justifyContent: 'center', backgroundColor: '#F8F5F2', transition: 'all 1.2s ease', ...wrapperStyles}}>
-    {/* <Text  position='absolute' top='30%' fontSize='56px' zIndex={4} flexWrap='nowrap' color='#FFF' textAlign={'center'}></Text> */}
-    <Marquee style={{position: 'absolute', zIndex: 2}} speed={120}>
-        <Text fontSize='56px' color='#FFF' fontWeight='700'>Apartments with an initial payment from $25,000</Text>
-    </Marquee>
-      <Box position='relative' w='790px'h='446px' overflow='hidden' borderRadius='30px' fill='cover' style={{...dynamicStyles, transition: 'all 0.8s ease'}}>
-        <video
-            width='100%'
-            height='100%'
-            autoPlay
-            loop
-            muted
-            src="/video/v-1.mp4"
-            type="video/mp4"
-        >
-        </video>
+        <Box bgColor='#232323' boxSize='46px' borderRadius='50%' alignContent='center' pl='12px' cursor='pointer'>
+          <Image src='key2.svg'/>
+        </Box>
       </Box>
-    </div>);
+      </div>
+      <div className={styles.video_wrapper} style={{...dynamicStyles}}>
+        <video
+          className={styles.video}
+          controls={isNarrowScreen}
+          autoPlay={!isNarrowScreen}
+          loop
+          muted >
+          <source src='/video/v-1.mp4'/>
+        </video>
+        <Marquee style={{position: 'absolute',top: '200px', zIndex: 2}} speed={150}>
+          <div className={styles.marquee_text}>Apartments with an initial payment from $25,000</div>
+          <div className={styles.marquee_text}><Box boxSize='18px' bgColor='#fff' borderRadius='50%'></Box></div>
+          <div className={styles.marquee_text}>interest-free</div>
+          <div className={styles.marquee_text}><Box boxSize='18px' bgColor='#fff' borderRadius='50%'></Box></div>
+          <div className={styles.marquee_text}>installment plan up to 8 years</div>
+        </Marquee>
+      </div>
+    </div>
+  </div>);
 };
+
+//     return (<div ref={videoRef} style={{height: "809px", width: '100%', position: 'relative', overflow: 'hidden', display: 'flex', alignItems: 'center', justifyContent: 'center', backgroundColor: '#F8F5F2', transition: 'all 1.2s ease', ...wrapperStyles}}>
+//     {/* <Text  position='absolute' top='30%' fontSize='56px' zIndex={4} flexWrap='nowrap' color='#FFF' textAlign={'center'}></Text> */}
+//     <Marquee style={{position: 'absolute', zIndex: 2}} speed={120}>
+//         <Text fontSize='56px' color='#FFF' fontWeight='700'>Apartments with an initial payment from $25,000</Text>
+//     </Marquee>
+//       <Box position='relative' w='790px'h='446px' overflow='hidden' borderRadius='30px' fill='cover' style={{...dynamicStyles, transition: 'all 0.8s ease'}}>
+//         <video
+//             width='100%'
+//             height='100%'
+//             autoPlay
+//             loop
+//             muted
+//             src="/video/v-1.mp4"
+//             type="video/mp4"
+//         >
+//         </video>
+//       </Box>
+//     </div>);
+// };
 
 export default VideoSection;

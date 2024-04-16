@@ -8,8 +8,6 @@ function ApartmentsPortfolio() {
 
                         <Box position="relative" width={{lg: '50%'}}   mx='auto' overflow='hidden'>
                             <Image src='portfolio-images/port-image-1.svg'  height='100%'/>
-                            <Box position='absolute' bottom='30px' left='30px'>      
-                            </Box>
                             <Box position='absolute' top={{base: '15px', lg: '40px'}} left={{base: '15px', lg: '40px'}}  textAlign='left'>
                                 <AnimationText lines={['Azure Heights', 'Luxury Residences']} style={{fontSize:'22px',color:'#fff', fontWeight: '600'}} delay={0.2}/>
                             </Box>
@@ -17,24 +15,36 @@ function ApartmentsPortfolio() {
                                 <Image src="/arrow-icon.svg" width='38px' height='38px' mt='16px' ml='6px' transition='all 0.4s'
                                 _hover={{transform: 'translateX(3px) translateY(-3px)'}}/>
                             </Box>
+                            <Box position='absolute' bottom={{base: '100px', lg: '130px'}} right={{base: '15px', lg: '40px'}} display='flex' columnGap='4px'>
+                                <Box w='160px' h='82px' borderRadius='18px' bgColor='#fff' py='16px' px='12px' display='flex' alignItems='center' justifyContent='space-between' transition='all 0.4s'
+                                    _hover={{bgColor: '#D5E7EE'}}>
+                                    <Image src='/map-pointer.svg'/>
+                                    <Text fontSize='16px' color='#000'>Dubai Marina</Text>
+                                </Box>
+                            </Box>
                             <Box position='absolute' bottom={{base: '15px', lg: '40px'}} left={{base: '15px', lg: '40px'}} display='flex' columnGap='4px'>
-                                <Box w='113px' h='82px' borderRadius='18px' bgColor='#fff' py='16px' px='12px' display='flex' flexDirection='column' justifyContent='space-between'>
+                                <Box w='113px' h='82px' borderRadius='18px' bgColor='#fff' py='16px' px='12px' display='flex' flexDirection='column' justifyContent='space-between' transition='all 0.4s'
+                                    _hover={{bgColor: '#D5E7EE'}}>
                                     <Text fontSize='12px' color='#2E2F30'>Price</Text>
                                     <Text fontSize='16px' color='#000'>from $290k</Text>
                                 </Box>
-                                <Box w='113px' h='82px' borderRadius='18px' bgColor='#fff' py='16px' px='12px' display='flex' flexDirection='column' justifyContent='space-between'>
+                                <Box w='113px' h='82px' borderRadius='18px' bgColor='#fff' py='16px' px='12px' display='flex' flexDirection='column' justifyContent='space-between' transition='all 0.4s'
+                                    _hover={{bgColor: '#D5E7EE'}}>
                                     <Text fontSize='12px' color='#2E2F30'>Price</Text>
                                     <Text fontSize='16px' color='#000'>from $290k</Text>
                                 </Box>
-                                <Box w='113px' h='82px' borderRadius='18px' bgColor='#fff' py='16px' px='12px' display='flex' flexDirection='column' justifyContent='space-between'>
+                                <Box w='113px' h='82px' borderRadius='18px' bgColor='#fff' py='16px' px='12px' display='flex' flexDirection='column' justifyContent='space-between' transition='all 0.4s'
+                                    _hover={{bgColor: '#D5E7EE'}}>
                                     <Text fontSize='12px' color='#2E2F30'>Price</Text>
                                     <Text fontSize='16px' color='#000'>from $290k</Text>
                                 </Box>
-                                <Box w='113px' h='82px' borderRadius='18px' bgColor='#fff' py='16px' px='12px' display='flex' flexDirection='column' justifyContent='space-between'>
+                                <Box w='113px' h='82px' borderRadius='18px' bgColor='#fff' py='16px' px='12px' display='flex' flexDirection='column' justifyContent='space-between' transition='all 0.4s'
+                                    _hover={{bgColor: '#D5E7EE'}}>
                                     <Text fontSize='12px' color='#2E2F30'>Price</Text>
                                     <Text fontSize='16px' color='#000'>from $290k</Text>
                                 </Box>
-                                <Box w='113px' h='82px' borderRadius='18px' bgColor='#fff' py='16px' px='12px' display='flex' flexDirection='column' justifyContent='space-between'>
+                                <Box w='113px' h='82px' borderRadius='18px' bgColor='#fff' py='16px' px='12px' display='flex' flexDirection='column' justifyContent='space-between' transition='all 0.4s'
+                                    _hover={{bgColor: '#D5E7EE'}}>
                                     <Text fontSize='12px' color='#2E2F30'>Price</Text>
                                     <Text fontSize='16px' color='#000'>from $290k</Text>
                                 </Box>

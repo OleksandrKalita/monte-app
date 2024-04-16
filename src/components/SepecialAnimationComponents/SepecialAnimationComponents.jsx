@@ -21,7 +21,7 @@ function SepecialAnimationComponents({ Component, animationFrom, animationTo, de
         });
       },
       {
-        threshold: 0.5
+        threshold: 0.1
       }
     );
 

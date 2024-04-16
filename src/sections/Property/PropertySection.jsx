@@ -10,15 +10,29 @@ import {
 
 import styles from './property.module.css';
 import SepecialAnimationComponents from '@/components/SepecialAnimationComponents/SepecialAnimationComponents';
+import AnimationText from '@/components/AnimationText/AnimationText';
+import { useEffect, useState } from 'react';
   
   function PropertySection() {
-    // Define the number of columns for different breakpoints
-    const columns = useBreakpointValue({ base: 1, md: 2, lg: 3 });
-  
+    const [isNarrowScreen, setIsNarrowScreen] = useState(false);
+
+  useEffect(() => {
+    const checkScreenSize = () => {
+        setIsNarrowScreen(window.innerWidth < 792);
+    };
+
+    checkScreenSize();
+
+    window.addEventListener('resize', checkScreenSize);
+
+    return () => {
+        window.removeEventListener('resize', checkScreenSize);
+    };
+  }, []);
     return (
       <div className={styles.wrapper}>
         <div className={styles.container}>
-            <Text fontSize={{base: '36px', lg: '58px'}}>Discover Your Ideal<br/>Property Type</Text>
+            {isNarrowScreen ? <AnimationText style={{fontSize: '36px'}} lines={['Discover Your Ideal', 'Property Type']} /> : <AnimationText style={{fontSize: '58px'}} lines={['Discover Your Ideal', 'Property Type']} />}
             <div className={styles.bottom_container}>
                 <Box position='relative'  w='266px' h='266px' mx='auto'>
                         <img className={styles.logo_icon} src='/logo-2.svg' />
