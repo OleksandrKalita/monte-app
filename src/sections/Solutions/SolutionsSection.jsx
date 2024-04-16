@@ -50,62 +50,58 @@ function SolutionsSection() {
                     </Box>
                     <Box w={{base: '100%', lg: '50%'}} display='flex' flexDirection='column' rowGap='30px' pt={{base: '30px', lg: '0px'}}>
 
-                        <Box w='100%' h='120px' bgColor='#fff' borderRadius='80px' p='10px' display='flex' justifyContent='flex-start' alignItems='center' columnGap='20px'>
-                            <Image src='48634.svg' />
+                        <Box w='100%' h={{base: '100px', lg: '120px'}} bgColor='#fff' borderRadius='80px' p='10px' display='flex' justifyContent='flex-start' alignItems='center' columnGap='20px'>
+                            <Image src='48634.svg' boxSize={{base: '76px', lg: '100px'}} />
                             <Box w='100%' display='flex' justifyContent='space-between' alignItems='center'>
-                                <Box position='relative' mt='-8px' pt='8px' pr='17px'>
-                                    <Text fontSize={{base: '22px', lg: '28px'}} fontWeight='500' color='#000'>Property Sales</Text>
+                                <Box position='relative' mt='-8px' pt={{base: '3', lg: '8px'}} pr={{base: '10px', lg: '17px'}}>
+                                    <Text fontSize={{base: '18px', lg: '28px'}} fontWeight='500' color='#000'>Property Sales</Text>
                                     <Text fontSize='14px' color='#000' position='absolute' top={0} right={0}>01</Text>
                                 </Box>
-                                {/* <AnimationText style={{fontSize: '28px', fontWeight: '500', color: '#000'}} lines={['Property Sales']}/> */}
-                                <Box boxSize='78px' bgColor='#fff' borderRadius='50%' transition='all 0.4s' mr='20px'
+                                <Box boxSize={{base: '56px', lg: '78px'}} bgColor='#fff' borderRadius='50%' transition='all 0.4s' mr={{base: '10px',lg: '20px'}}
                                     _hover={{bgColor: '#D5E7EE', pt: '5px'}}>
-                                    <Image src='arrow-icon.svg' boxSize={'60px'} transform='rotate(135deg)'/>
+                                    <Image src='arrow-icon.svg' boxSize={{base: '40px', lg: '60px'}} transform='rotate(135deg)'/>
                                 </Box>
                             </Box>
                         </Box>
 
-                        <Box w='100%' h='120px' bgColor='#fff' borderRadius='80px' p='10px' display='flex' justifyContent='flex-start' alignItems='center' columnGap='20px'>
-                            <Image src='48635.svg' />
+                        <Box w='100%' h={{base: '100px', lg: '120px'}} bgColor='#fff' borderRadius='80px' p='10px' display='flex' justifyContent='flex-start' alignItems='center' columnGap='20px'>
+                            <Image src='48635.svg' boxSize={{base: '76px', lg: '100px'}} />
                             <Box w='100%' display='flex' justifyContent='space-between' alignItems='center'>
-                                <Box position='relative' mt='-8px' pt='8px' pr='17px'>
-                                    <Text fontSize={{base: '22px', lg: '28px'}} fontWeight='500' color='#000'>Property Management</Text>
+                                <Box position='relative' mt='-8px' pt={{base: '3', lg: '8px'}} pr={{base: '10px', lg: '17px'}}>
+                                    <Text fontSize={{base: '18px', lg: '28px'}} fontWeight='500' color='#000'>Property Management</Text>
                                     <Text fontSize='14px' color='#000' position='absolute' top={0} right={0}>02</Text>
                                 </Box>
-                                {/* <AnimationText style={{fontSize: '28px', fontWeight: '500', color: '#000'}} lines={['Property Sales']}/> */}
-                                <Box boxSize='78px' bgColor='#fff' borderRadius='50%' transition='all 0.4s' mr='20px'
+                                <Box boxSize={{base: '56px', lg: '78px'}} bgColor='#fff' borderRadius='50%' transition='all 0.4s' mr={{base: '10px',lg: '20px'}}
                                     _hover={{bgColor: '#D5E7EE', pt: '5px'}}>
-                                    <Image src='arrow-icon.svg' width='60px' height='60px' transform='rotate(135deg)'/>
+                                    <Image src='arrow-icon.svg' boxSize={{base: '40px', lg: '60px'}} transform='rotate(135deg)'/>
                                 </Box>
                             </Box>
                         </Box>
 
-                        <Box w='100%' h='120px' bgColor='#fff' borderRadius='80px' p='10px' display='flex' justifyContent='flex-start' alignItems='center' columnGap='20px'>
-                            <Image src='48636.svg' />
+                        <Box w='100%' h={{base: '100px', lg: '120px'}} bgColor='#fff' borderRadius='80px' p='10px' display='flex' justifyContent='flex-start' alignItems='center' columnGap='20px'>
+                            <Image src='48636.svg' boxSize={{base: '76px', lg: '100px'}} />
                             <Box w='100%' display='flex' justifyContent='space-between' alignItems='center'>
-                                <Box position='relative' mt='-8px' pt='8px' pr='17px'>
-                                    <Text fontSize={{base: '22px', lg: '28px'}} fontWeight='500' color='#000'>Investment Consultation</Text>
+                                <Box position='relative' mt='-8px' pt={{base: '3', lg: '8px'}} pr={{base: '10px', lg: '17px'}}>
+                                    <Text fontSize={{base: '18px', lg: '28px'}} fontWeight='500' color='#000'>Investment Consultation</Text>
                                     <Text fontSize='14px' color='#000' position='absolute' top={0} right={0}>03</Text>
                                 </Box>
-                                {/* <AnimationText style={{fontSize: '28px', fontWeight: '500', color: '#000'}} lines={['Property Sales']}/> */}
-                                <Box boxSize='78px' bgColor='#fff' borderRadius='50%' transition='all 0.4s' mr='20px'
+                                <Box boxSize={{base: '56px', lg: '78px'}} bgColor='#fff' borderRadius='50%' transition='all 0.4s' mr={{base: '10px',lg: '20px'}}
                                     _hover={{bgColor: '#D5E7EE', pt: '5px'}}>
-                                    <Image src='arrow-icon.svg' width='60px' height='60px' transform='rotate(135deg)'/>
-                                </Box> 
+                                    <Image src='arrow-icon.svg' boxSize={{base: '40px', lg: '60px'}} transform='rotate(135deg)'/>
+                                </Box>
                             </Box>
                         </Box>
 
-                        <Box w='100%' h='120px' bgColor='#fff' borderRadius='80px' p='10px' display='flex' justifyContent='flex-start' alignItems='center' columnGap='20px'>
-                            <Image src='48637.svg' />
+                        <Box w='100%' h={{base: '100px', lg: '120px'}} bgColor='#fff' borderRadius='80px' p='10px' display='flex' justifyContent='flex-start' alignItems='center' columnGap='20px'>
+                            <Image src='48637.svg' boxSize={{base: '76px', lg: '100px'}} />
                             <Box w='100%' display='flex' justifyContent='space-between' alignItems='center'>
-                                <Box position='relative' mt='-8px' pt='8px' pr='17px'>
-                                    <Text fontSize={{base: '22px', lg: '28px'}} fontWeight='500' color='#000'>Market Analysis</Text>
+                                <Box position='relative' mt='-8px' pt={{base: '3', lg: '8px'}} pr={{base: '10px', lg: '17px'}}>
+                                    <Text fontSize={{base: '18px', lg: '28px'}} fontWeight='500' color='#000'>Market Analysis</Text>
                                     <Text fontSize='14px' color='#000' position='absolute' top={0} right={0}>04</Text>
                                 </Box>
-                                {/* <AnimationText style={{fontSize: '28px', fontWeight: '500', color: '#000'}} lines={['Property Sales']}/> */}
-                                <Box boxSize='78px' bgColor='#fff' borderRadius='50%' transition='all 0.4s' mr='20px'
+                                <Box boxSize={{base: '56px', lg: '78px'}} bgColor='#fff' borderRadius='50%' transition='all 0.4s' mr={{base: '10px',lg: '20px'}}
                                     _hover={{bgColor: '#D5E7EE', pt: '5px'}}>
-                                    <Image src='arrow-icon.svg' width='60px' height='60px' transform='rotate(135deg)'/>
+                                    <Image src='arrow-icon.svg' boxSize={{base: '40px', lg: '60px'}} transform='rotate(135deg)'/>
                                 </Box>
                             </Box>
                         </Box>
@@ -114,11 +110,11 @@ function SolutionsSection() {
 
             </Box>
 
-            <Box pt='80px' pb='180px'>
+            <Box  pb={{base: '140px',lg: '180px'}}>
                 <Marquee style={{position: 'absolute', zIndex: 2}} speed={120}>
-                    <Box h='120px' bgColor='#575757' fontSize='82px' color='#232323' mx='20px' px='30px' borderRadius='80px'>Payment from Almaty</Box>
-                    <Box h='120px' bgColor='#575757' fontSize='82px' color='#232323' mx='20px' px='30px' borderRadius='80px'>0% Commission</Box>
-                    <Box h='120px' bgColor='#575757' fontSize='82px' color='#232323' mx='20px' px='30px' borderRadius='80px'>Remote Purchase</Box>
+                    <Box h={{base: '85px', lg: '120px'}} bgColor='#575757' fontSize={{base: '56px', lg: '82px'}} color='#232323' mx='20px' px='30px' borderRadius='80px'>Payment from Almaty</Box>
+                    <Box h={{base: '85px', lg: '120px'}}bgColor='#575757' fontSize={{base: '56px', lg: '82px'}} color='#232323' mx='20px' px='30px' borderRadius='80px'>0% Commission</Box>
+                    <Box h={{base: '85px', lg: '120px'}} bgColor='#575757' fontSize={{base: '56px', lg: '82px'}} color='#232323' mx='20px' px='30px' borderRadius='80px'>Remote Purchase</Box>
                 </Marquee>
             </Box>
 

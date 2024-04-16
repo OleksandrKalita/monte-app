@@ -27,57 +27,57 @@ function QuestionsSection() {
                 <Box w={{base: '100%', lg: '50%'}} display='flex' columnGap='40px' flexWrap='wrap' rowGap='95px'  position='relative' pt={{base: '20px', lg: '0px'}}>
                     
                     <Box  bgColor='#fff' borderRadius='20px' px='20px' py='50px'>
-                        <Box borderTop='1px solid rgba(0, 0, 0, 0.2)' borderBottom='1px solid rgba(0, 0, 0, 0.2)' display='flex' justifyContent='space-between' columnGap='10px' alignItems='center' transition='all 0.4s'>
-                            <Text fontSize='20px' color='#000' py='25px' >What types of properties do we offer in Dubai?</Text>
+                        <Box borderTop='1px solid rgba(0, 0, 0, 0.2)' borderBottom='1px solid rgba(0, 0, 0, 0.2)' display='flex' columnGap='10px' alignItems='center' transition='all 0.4s' justifyContent='space-between'>
+                            <Text fontSize='20px' color='#000' py='25px' width='80%' >What types of properties do we offer in Dubai?</Text>
                             <Box boxSize='52px' bgColor='#fff' borderRadius='50%' transition='all 0.4s' 
                                 _hover={{bgColor: '#D5E7EE'}}>
                                 <Image src='plus-icon.svg' width='35px' height='35px' pt='16px' pl='16px'/>
                             </Box>
                         </Box>
 
-                        <Box borderTop='1px solid rgba(0, 0, 0, 0.2)' borderBottom='1px solid rgba(0, 0, 0, 0.2)' display='flex'   alignItems='center' transition='all 0.4s' mt='-1px'>
-                            <Text fontSize='20px' color='#000' py='25px' flex='1 1 auto' >What are the payment options available for purchasing a property?</Text>
+                        <Box borderTop='1px solid rgba(0, 0, 0, 0.2)' borderBottom='1px solid rgba(0, 0, 0, 0.2)' display='flex'   alignItems='center' transition='all 0.4s' mt='-1px' justifyContent='space-between'>
+                            <Text fontSize='20px' color='#000' py='25px' flex='1 1 auto' width='80%' >What are the payment options available for purchasing a property?</Text>
                             <Box boxSize='52px' bgColor='#fff' borderRadius='50%' transition='all 0.4s' 
                                 _hover={{bgColor: '#D5E7EE'}}>
                                 <Image src='plus-icon.svg' width='35px' height='35px' pt='16px' pl='16px'/>
                             </Box>
                         </Box>
 
-                        <Box borderTop='1px solid rgba(0, 0, 0, 0.2)' borderBottom='1px solid rgba(0, 0, 0, 0.2)' display='flex'   alignItems='center' transition='all 0.4s' mt='-1px'>
-                            <Text fontSize='20px' color='#000' py='25px' flex='1 1 auto' >Can foreign nationals buy property in Dubai?</Text>
+                        <Box borderTop='1px solid rgba(0, 0, 0, 0.2)' borderBottom='1px solid rgba(0, 0, 0, 0.2)' display='flex'   alignItems='center' transition='all 0.4s' mt='-1px' justifyContent='space-between'>
+                            <Text fontSize='20px' color='#000' py='25px' flex='1 1 auto' width='80%'>Can foreign nationals buy property in Dubai?</Text>
                             <Box boxSize='52px' bgColor='#fff' borderRadius='50%' transition='all 0.4s' 
                                 _hover={{bgColor: '#D5E7EE'}}>
                                 <Image src='plus-icon.svg' width='35px' height='35px' pt='16px' pl='16px'/>
                             </Box>
                         </Box>
 
-                        <Box borderTop='1px solid rgba(0, 0, 0, 0.2)' borderBottom='1px solid rgba(0, 0, 0, 0.2)' display='flex'   alignItems='center' transition='all 0.4s' mt='-1px'>
-                            <Text fontSize='20px' color='#000' py='25px' >What is the process for obtaining a residency visa through property investment?</Text>
-                            <Box boxSize='52px' bgColor='#fff' borderRadius='50%' transition='all 0.4s' 
+                        <Box borderTop='1px solid rgba(0, 0, 0, 0.2)' borderBottom='1px solid rgba(0, 0, 0, 0.2)' display='flex'   alignItems='center' transition='all 0.4s' mt='-1px' justifyContent='space-between'>
+                            <Text fontSize='20px' color='#000' py='25px' width='80%' >What is the process for obtaining a residency visa through property investment?</Text>
+                            <Box boxSize='52px' bgColor='#fff' borderRadius='100px' transition='all 0.4s' 
                                 _hover={{bgColor: '#D5E7EE'}}>
                                 <Image src='plus-icon.svg' width='35px' height='35px' pt='16px' pl='16px'/>
                             </Box>
                         </Box>
 
-                        <Box borderTop='1px solid rgba(0, 0, 0, 0.2)' borderBottom='1px solid rgba(0, 0, 0, 0.2)' display='flex'   alignItems='center' transition='all 0.4s' mt='-1px'>
-                            <Text fontSize='20px' color='#000' py='25px' flex='1 1 auto' >Are there any additional costs associated with property ownership in Dubai?</Text>
-                            <Box boxSize='52px' bgColor='#fff' borderRadius='50%' transition='all 0.4s' 
+                        <Box borderTop='1px solid rgba(0, 0, 0, 0.2)' borderBottom='1px solid rgba(0, 0, 0, 0.2)' display='flex'   alignItems='center' transition='all 0.4s' mt='-1px' justifyContent='space-between'>
+                            <Text fontSize='20px' color='#000' py='25px' flex='1 1 auto' width='80%'>Are there any additional costs associated with property ownership in Dubai?</Text>
+                            <Box boxSize='52px' bgColor='#fff' borderRadius='100px' transition='all 0.4s' 
                                 _hover={{bgColor: '#D5E7EE'}}>
                                 <Image src='plus-icon.svg' width='35px' height='35px' pt='16px' pl='16px'/>
                             </Box>
                         </Box>
 
-                        <Box borderTop='1px solid rgba(0, 0, 0, 0.2)' borderBottom='1px solid rgba(0, 0, 0, 0.2)' display='flex'   alignItems='center' transition='all 0.4s' mt='-1px'>
-                            <Text fontSize='20px' color='#000' py='25px' flex='1 1 auto' >Do we offer property management services for rental properties?</Text>
-                            <Box boxSize='52px' bgColor='#fff' borderRadius='50%' transition='all 0.4s' 
+                        <Box borderTop='1px solid rgba(0, 0, 0, 0.2)' borderBottom='1px solid rgba(0, 0, 0, 0.2)' display='flex'   alignItems='center' transition='all 0.4s' mt='-1px' justifyContent='space-between'>
+                            <Text fontSize='20px' color='#000' py='25px' flex='1 1 auto' width='80%'>Do we offer property management services for rental properties?</Text>
+                            <Box boxSize='52px' bgColor='#fff' borderRadius='100px' transition='all 0.4s' 
                                 _hover={{bgColor: '#D5E7EE'}}>
                                 <Image src='plus-icon.svg' width='35px' height='35px' pt='16px' pl='16px'/>
                             </Box>
                         </Box>
 
-                        <Box borderTop='1px solid rgba(0, 0, 0, 0.2)' borderBottom='1px solid rgba(0, 0, 0, 0.2)' display='flex'   alignItems='center' transition='all 0.4s' mt='-1px'>
-                            <Text fontSize='20px' color='#000' py='25px' flex='1 1 auto' >Can we assist with property financing for non-resident buyers?</Text>
-                            <Box boxSize='52px' bgColor='#fff' borderRadius='50%' transition='all 0.4s' 
+                        <Box borderTop='1px solid rgba(0, 0, 0, 0.2)' borderBottom='1px solid rgba(0, 0, 0, 0.2)' display='flex'   alignItems='center' transition='all 0.4s' mt='-1px' justifyContent='space-between'>
+                            <Text fontSize='20px' color='#000' py='25px' flex='1 1 auto'width='80%' >Can we assist with property financing for non-resident buyers?</Text>
+                            <Box boxSize='52px' bgColor='#fff' borderRadius='100px' transition='all 0.4s' 
                                 _hover={{bgColor: '#D5E7EE'}}>
                                 <Image src='plus-icon.svg' width='35px' height='35px' pt='16px' pl='16px'/>
                             </Box>

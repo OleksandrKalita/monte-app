@@ -9,6 +9,7 @@ import AdvantagesSection from "@/sections/Advantages/AdvantagesSection";
 import PartnersSection from "@/sections/Partners/PartnersSection";
 import QuestionsSection from "@/sections/Questions/QustionsSection";
 import Footer from "@/sections/Footer/Footer";
+import PropertySection from "@/sections/Property/PropertySection";
 
 export default function HomePage() {
   return <ChakraProvider>
@@ -24,6 +25,7 @@ export default function HomePage() {
       <StatisticSection/>
       <SolutionsSection/>
       <AdvantagesSection/>
+      <PropertySection/>
       <PartnersSection/>
       <QuestionsSection/>
       <Footer/>

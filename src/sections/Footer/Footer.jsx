@@ -13,16 +13,11 @@ function Footer() {
     return (
         <Box>
             <Box w='100vw' bgColor='#F8F5F2'>
-                <Box maxW='1400px' px='20px' mx='auto' py='30px'>
+                <Box maxW='1400px' px={{base: '15px', lg: '20px'}} mx='auto' py='30px'>
                     <Box>
                         <Grid width="full">
-                            <Box position="relative" width="full" height="auto" colSpan={{ base: 2, md: 1 }}>
-                                <SepecialAnimationComponents 
-                                        animationFrom={{ x: 0, autoAlpha: 0, scale: 0.5 }}
-                                        animationTo={{x: 0, autoAlpha: 1, scale: 1, duration: 1.5, ease: 'power3.out'}}
-                                        Component={() => (
-                                        <Image src="/footer-image.svg" width="full" height="auto" />
-                                )}/>
+                            <Box position="relative" width="full" height={{base: '700px', lg: '730px'}}>
+                                <Image src="/footer-image.svg" objectFit='cover' width="full" height="full" borderRadius='20px'/>
                                 <Box position="absolute" top="0" left="0" pt="40px" pl='25px'>
                                     {isMobile ? <AnimationText style={{fontSize: '36px', fontWeight: '800', color: '#fff'}} lines={['Built Your Future', 'With Us']} /> : 
                                     <AnimationText style={{fontSize: '68px', fontWeight: '800', color: '#fff'}} lines={['Built Your Future', 'With Us']} />}

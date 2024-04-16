@@ -5,6 +5,7 @@ import AnimationText from "@/components/AnimationText/AnimationText";
 import ImageSlider from "@/components/ImageSlider/ImageSlider";
 import { useEffect, useState } from "react";
 import SepecialAnimationComponents from "@/components/SepecialAnimationComponents/SepecialAnimationComponents";
+import styles from './Home.module.css';
 
 const Home = () => {
     const [imageUrl, setImageUrl] = useState('/images/home/main-image-1.svg');
@@ -161,9 +162,11 @@ const Home = () => {
                             </Box>
                         </Box>
                         : <Box position='absolute' top='30px' left='30px'>
-                        <Box display='flex' columnGap='57px'>
+                        <Box display='flex' columnGap='57px' className={styles.anim_text_none}>
                             <AnimationText lines={['More than 1500 real', 'estate properties']} style={{color: '#FFFFFF', fontSize: '18px', fontWeight: 600}} delay={0.7}/>
-                            <AnimationText lines={['From $145,000 with a', 'yield of 10% per annum']} style={{color: '#FFFFFF', fontSize: '18px', fontWeight: 600}} delay={0.7}/>
+                            <div className={styles.anim_text}>
+                                <AnimationText lines={['From $145,000 with a', 'yield of 10% per annum']} style={{color: '#FFFFFF', fontSize: '18px', fontWeight: 600}} delay={0.7}/>
+                            </div>
                         </Box>
                         </Box>
 
@@ -223,6 +226,7 @@ const Home = () => {
                         </Box>
                         }
                     </Box>
+
                 </Grid>
             </Box>
         </Box>
