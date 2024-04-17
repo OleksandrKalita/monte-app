@@ -22,31 +22,34 @@ function ApartmentsPortfolio() {
                                     <Text fontSize='16px' color='#000'>Dubai Marina</Text>
                                 </Box>
                             </Box>
-                            <Box position='absolute' bottom={{base: '15px', lg: '40px'}} left={{base: '15px', lg: '40px'}} display='flex' columnGap='4px'>
-                                <Box w='113px' h='82px' borderRadius='18px' bgColor='#fff' py='16px' px='12px' display='flex' flexDirection='column' justifyContent='space-between' transition='all 0.4s'
+                            <Box position='absolute' bottom={{base: '15px', lg: '40px'}} left={{base: '15px', lg: '40px'}} display='flex' columnGap='4px' textAlign='left'>
+                                <Box w='113px' h='82px' borderRadius='18px' bgColor='#fff' py='12px' px='10px' display='flex' flexDirection='column' justifyContent='space-between' transition='all 0.4s'
                                     _hover={{bgColor: '#D5E7EE'}}>
                                     <Text fontSize='12px' color='#2E2F30'>Price</Text>
                                     <Text fontSize='16px' color='#000'>from $290k</Text>
                                 </Box>
-                                <Box w='113px' h='82px' borderRadius='18px' bgColor='#fff' py='16px' px='12px' display='flex' flexDirection='column' justifyContent='space-between' transition='all 0.4s'
+                                <Box w='113px' h='82px' borderRadius='18px' bgColor='#fff' py='12px' px='12px' display='flex' flexDirection='column' justifyContent='space-between' transition='all 0.4s'
                                     _hover={{bgColor: '#D5E7EE'}}>
-                                    <Text fontSize='12px' color='#2E2F30'>Price</Text>
-                                    <Text fontSize='16px' color='#000'>from $290k</Text>
+                                    <Text fontSize='12px' color='#2E2F30'>Installment Plan</Text>
+                                    <Text fontSize='16px' color='#000'>for 10 years</Text>
                                 </Box>
-                                <Box w='113px' h='82px' borderRadius='18px' bgColor='#fff' py='16px' px='12px' display='flex' flexDirection='column' justifyContent='space-between' transition='all 0.4s'
+                                <Box w='113px' h='82px' borderRadius='18px' bgColor='#fff' py='12px' px='12px' display='flex' flexDirection='column' justifyContent='space-between' transition='all 0.4s'
                                     _hover={{bgColor: '#D5E7EE'}}>
-                                    <Text fontSize='12px' color='#2E2F30'>Price</Text>
-                                    <Text fontSize='16px' color='#000'>from $290k</Text>
+                                    <Text fontSize='12px' color='#2E2F30'>Initial Payment</Text>
+                                    <Text fontSize='16px' color='#000'>$30,000</Text>
                                 </Box>
-                                <Box w='113px' h='82px' borderRadius='18px' bgColor='#fff' py='16px' px='12px' display='flex' flexDirection='column' justifyContent='space-between' transition='all 0.4s'
+                                <Box w='113px' h='82px' borderRadius='18px' bgColor='#fff' py='12px' px='12px' display='flex' flexDirection='column' justifyContent='space-between' transition='all 0.4s'
                                     _hover={{bgColor: '#D5E7EE'}}>
-                                    <Text fontSize='12px' color='#2E2F30'>Price</Text>
-                                    <Text fontSize='16px' color='#000'>from $290k</Text>
+                                    <Text fontSize='12px' color='#2E2F30'>Upgraded Features</Text>
+                                    <Box display='flex' columnGap='15px'>
+                                        <Image src='/icon-p-1.svg'/>
+                                        <Image src='/icon-p-2.svg'/>
+                                    </Box>
                                 </Box>
-                                <Box w='113px' h='82px' borderRadius='18px' bgColor='#fff' py='16px' px='12px' display='flex' flexDirection='column' justifyContent='space-between' transition='all 0.4s'
+                                <Box w='113px' h='82px' borderRadius='18px' bgColor='#fff' py='12px' px='12px' display='flex' flexDirection='column' justifyContent='space-between' transition='all 0.4s'
                                     _hover={{bgColor: '#D5E7EE'}}>
-                                    <Text fontSize='12px' color='#2E2F30'>Price</Text>
-                                    <Text fontSize='16px' color='#000'>from $290k</Text>
+                                    <Text fontSize='12px' color='#2E2F30'>Completion Date</Text>
+                                    <Text fontSize='16px' color='#000'>09/2025</Text>
                                 </Box>
                             </Box>
                         </Box>

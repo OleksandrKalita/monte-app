@@ -71,7 +71,7 @@ function PortfolioSection() {
             <Box maxW='1400px' m='auto' py={{base: '80px', lg: '100px'}} px='20px' textAlign={'center'}>
                 <Box display='flex' flexDirection={{base: 'column', lg: 'row'}} justifyContent='space-between'>
                     <Text fontSize={{base: '36px', lg: '56px'}} color='#FFF'>Explore Our Property Portfolio</Text>
-                    <Box minW={{base: '353px', lg: '330px'}}  h='50px' bgColor='#393939' borderRadius='8px' p='4px' mx={{base: 'auto', lg: '0px'}} my={{base: '40px', lg: 'auto'}}>
+                    <Box minW={{base: '353px', lg: '360px'}}  h='50px' bgColor='#393939' borderRadius='8px' p='4px' mx={{base: 'auto', lg: '0px'}} my={{base: '40px', lg: 'auto'}}>
                         <Stack boxSize='100%' display='flex' flexDirection='row'>
                             <Box width='33.333%' alignContent='center' textAlign='center' borderRadius='8px' cursor='pointer' transition='all 0.5s'
                                 bgColor={numPortfolio === 1 && '#fff'}

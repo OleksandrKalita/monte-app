@@ -1,4 +1,5 @@
 import AnimationText from "@/components/AnimationText/AnimationText";
+import MultiLineTextAnimation from "@/components/MultilineTextAnimation/MultilineTextAnimation";
 import SepecialAnimationComponents from "@/components/SepecialAnimationComponents/SepecialAnimationComponents";
 import { Box, Grid, Image, Text, Input, useBreakpointValue } from "@chakra-ui/react";
 import { useEffect, useState } from "react";
@@ -36,7 +37,12 @@ function Footer() {
                 <Box maxW='1400px' px='20px' mx='auto' display='flex' justifyContent='space-between' flexWrap='wrap' rowGap='70px'>
                     <Box display='flex' flexDirection='column' justifyContent='space-between' rowGap='70px'>
                         <Box>
-                            <Image className="svg-image" src='/images/home/logotype-icon.svg' width='169px' height='58px' mb='25px'/>
+                            <SepecialAnimationComponents
+                                animationFrom={{ x: 0, autoAlpha: 0, scale: 0.5 }}
+                                animationTo={{x: 0, autoAlpha: 1, scale: 1, duration: 1.5, ease: 'power3.out'}}
+                                Component={() => (
+                                    <Image className="svg-image" src='/images/home/logotype-icon.svg' width='169px' height='58px' mb='25px'/>
+                            )}/>
                             <AnimationText style={{fontSize: '16px', color: 'rgba(0,0,0,0.8)'}} lines={['Building Your Dreams In Real Estate']}/>
                         </Box>
 

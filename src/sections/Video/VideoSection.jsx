@@ -583,11 +583,9 @@ function VideoSection () {
       }, []);
     
 
-    let dynamicStyles = {
-    };
-    let wrapperStyles = {
-
-    }
+    let dynamicStyles = {}
+    let wrapperStyles = {}
+    let marqueeStyles = {}
 
     if(visibility > 0.7) {
         dynamicStyles = {
@@ -598,6 +596,9 @@ function VideoSection () {
         },
         wrapperStyles = {
           height: 0
+        }
+        marqueeStyles = {
+          top: '400px'
         }
     }
     // if(position === 'befor' && visibility <= 0.6) {
@@ -690,7 +691,7 @@ function VideoSection () {
           muted >
           <source src='/video/v-1.mp4'/>
         </video>
-        <Marquee style={{position: 'absolute',top: '200px', zIndex: 2}} speed={150}>
+        <Marquee style={{position: 'absolute',top: '200px', zIndex: 2, ...marqueeStyles}} speed={150}>
           <div className={styles.marquee_text}>Apartments with an initial payment from $25,000</div>
           <div className={styles.marquee_text}><Box boxSize='18px' bgColor='#fff' borderRadius='50%'></Box></div>
           <div className={styles.marquee_text}>interest-free</div>
