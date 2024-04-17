@@ -10,6 +10,40 @@ function VideoSection () {
     const [visibility, setVisibility] = useState(0);
     const [position, setPosition] = useState('before');
 
+
+
+
+    const [isFullyScrolled, setIsFullyScrolled] = useState(false);
+    useEffect(() => {
+      const currentElement = videoRef.current;
+  
+      if (currentElement) {
+          const observer = new IntersectionObserver(entries => {
+              entries.forEach(entry => {
+                  const isTop = entry.boundingClientRect.top <= 0 && entry.isIntersecting;
+                  const isBottom = entry.boundingClientRect.bottom >= window.innerHeight && !entry.isIntersecting;
+                  setIsFullyScrolled(isTop || isBottom);
+              });
+          }, {
+              root: null,
+              rootMargin: '0px',
+              threshold: [0, 1]
+          });
+  
+          observer.observe(currentElement);
+  
+          return () => {
+              observer.disconnect();
+          };
+      }
+  }, []);
+
+
+  // console.log(isFullyScrolled);
+
+
+
+
     useEffect(() => {
         const observer = new IntersectionObserver(
           (entries) => {
@@ -23,12 +57,14 @@ function VideoSection () {
                 const rect = entry.boundingClientRect;
                 if (rect.top > 0) {
                   setPosition('befor');
+                  console.log("befor");
                 } else {
                   setPosition('after');
                   console.log("after");
                 }
               } else {
-                setPosition('befor'); 
+                // setPosition('befor'); 
+                // console.log("befor");
               }
             });
           },
@@ -54,7 +90,7 @@ function VideoSection () {
     let wrapperStyles = {}
     let marqueeStyles = {}
 
-    if(visibility > 0.7) {
+    if(position === 'befor' && visibility > 0.8) {
         dynamicStyles = {
             'margin-top': '0px',
             width: '100%',
@@ -62,12 +98,26 @@ function VideoSection () {
             borderRadius: '0px',
         },
         wrapperStyles = {
-          height: 0
-        }
+          'padding-top': '-20px'
+        },
         marqueeStyles = {
-          top: '400px'
+          top: '380px'
         }
     }    
+    if(position === 'after' || position === 'on') {
+      dynamicStyles = {
+          'margin-top': '0px',
+          width: '100%',
+          height:'100%',
+          borderRadius: '0px',
+      },
+      wrapperStyles = {
+        'padding-top': '0px'
+      },
+      marqueeStyles = {
+        top: '380px'
+      }
+  }    
     const [isNarrowScreen, setIsNarrowScreen] = useState(false);
 
   useEffect(() => {
@@ -87,16 +137,14 @@ function VideoSection () {
 
   return (<div className={styles.wrapper} ref={videoRef}>
     <div className={styles.container}>
-      <div  style={{transition: 'all 0.4s',...wrapperStyles}}>
-      <Box pt={{base: '50px', lg: '80px'}} mx='auto' w='max-content' display='flex' columnGap='12px'>
-        <Box bgColor='#232323' boxSize='46px' borderRadius='50%' alignContent='center' pl='11px' cursor='pointer'>
-          <Image src='house2.svg'/>
-        </Box>
-        <Box bgColor='#232323' boxSize='46px' borderRadius='50%' alignContent='center' pl='12px' cursor='pointer'>
-          <Image src='key2.svg'/>
-        </Box>
-      </Box>
-      </div>
+        <div className={styles.button_con} style={{...wrapperStyles}} >
+          <Box bgColor='#232323' boxSize='46px' borderRadius='50%' alignContent='center' pl='11px' cursor='pointer'>
+            <Image src='house2.svg'/>
+          </Box>
+          <Box bgColor='#232323' boxSize='46px' borderRadius='50%' alignContent='center' pl='12px' cursor='pointer'>
+            <Image src='key2.svg'/>
+          </Box>
+        </div>
       <div className={styles.video_wrapper} style={{...dynamicStyles}}>
         <video
           className={styles.video}
