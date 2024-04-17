@@ -150,12 +150,6 @@ const Home = () => {
 
 
                     <Box position="relative" width={{lg: '50%'}}  mt={{base: '50px', lg: '0px'}} mx='auto'>
-                        {/* <SepecialAnimationComponents
-                            animationFrom={{ x: 0, autoAlpha: 0, scale: 0.5 }}
-                            animationTo={{x: 0, autoAlpha: 1, scale: 1, duration: 1.5, ease: 'power3.out'}}
-                            Component={() => (
-                                <Image src={imageUrl}  min-height='100%' min-width='100%'/>
-                            )}/> */}
                             <Image src={imageUrl}  min-height='100%' min-width='100%'/>
                         {isMobile ? <Box position='absolute' bottom='30px' left='30px'>
                             <Box display='flex' columnGap='57px'>

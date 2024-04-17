@@ -232,18 +232,3 @@ import { useEffect, useState } from 'react';
   
 
 export default PropertySection;
-
-
-{/* <Box p={4}>
-        <Text fontSize="2xl" mb={4}>Discover Your Ideal Property Type</Text>
-        <Grid templateColumns={`repeat(${columns}, 1fr)`} gap={6}>
-          {properties.map((property) => (
-            <GridItem key={property.id} w="100%" boxShadow="md">
-              <VStack>
-                <Image src={property.imageUrl} alt={property.title} />
-                <Text>{property.title}</Text>
-              </VStack>
-            </GridItem>
-          ))}
-        </Grid>
-      </Box> */}

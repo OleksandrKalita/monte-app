@@ -14,15 +14,15 @@ function SolutionsSection() {
 
     // Рендер круга з текстом
     const renderCircle = (text, index, isLast) => {
-      const offset = isSmallScreen ? index * 260 : index * 340; // зміщення
+      const offset = isSmallScreen ? index * 260 : index * 340;
       return (
         <Circle
           size={isSmallScreen ? '400px' : '412px'}
           border="2px solid white"
-          position={!isLast ? 'absolute' : 'relative'} // останній круг має бути відносним, щоб контейнер розтягувався
+          position={!isLast ? 'absolute' : 'relative'}
           left={!isSmallScreen && index !== 0 ? `${offset}px` : undefined}
           top={isSmallScreen && index !== 0 ? `${offset}px` : undefined}
-          zIndex={isLast ? 1 : 0} // останній круг повинен бути зверху, щоб текст був видимим
+          zIndex={isLast ? 1 : 0}
         >
           <Text color="white" fontSize="lg" p={4}>
             {text}
